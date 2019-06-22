@@ -1,0 +1,27 @@
+{
+    "presets": [
+        [
+            "@babel/preset-env",
+            {
+                "targets": {
+                    "node": true
+                }
+            }
+        ]
+    ],
+    "plugins": [
+        "@babel/plugin-proposal-class-properties",
+        [
+            "@babel/plugin-proposal-pipeline-operator",
+            {
+                "proposal": "smart"
+            }
+        ]
+    ],
+    "env": {
+        "development": {
+            "sourceMaps": "inline",
+            "retainLines": true
+        }
+    }
+}

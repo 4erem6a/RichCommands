@@ -1,0 +1,33 @@
+{
+  "name": "rich-commands",
+  "version": "1.0.0",
+  "description": "A command parser",
+  "main": "dist/index.js",
+  "types": "./typings/index.d.ts",
+  "scripts": {
+    "lint": "eslint src",
+    "build": "babel src -d dist",
+    "prepublish": "npm run lint && npm run build"
+  },
+  "keywords": [
+    "rich",
+    "commands",
+    "command",
+    "parser"
+  ],
+  "author": "4erem6a",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/4erem6a/RichCommands.git"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-proposal-pipeline-operator": "^7.3.2",
+    "@babel/preset-env": "^7.4.5",
+    "babel-eslint": "^11.0.0-beta.0",
+    "eslint": "^5.16.0"
+  }
+}
