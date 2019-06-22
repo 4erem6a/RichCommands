@@ -20,7 +20,7 @@ export class RichParserStream extends ParserStream {
         this.skipSeparators();
         return this.isValid() && (
             this.flag() || this.argument()
-        );
+        ) | undefined;
     }
 
     flag() {
