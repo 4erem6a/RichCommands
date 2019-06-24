@@ -7,12 +7,12 @@ declare module "rich-commands" {
 
         protected popMode(): void;
         protected pushMode(mode: any): void;
-        protected get mode(): any;
+        protected readonly mode: any;
 
         protected match(pattern: string, offset?: number): boolean;
         
-        protected get next(): string;
-        protected get current(): string;
+        protected readonly next: string;
+        protected readonly current: string;
 
         protected move(offset?: number): string;
 
@@ -77,8 +77,10 @@ declare module "rich-commands" {
         private skipSeparators(): void;
     }
 
+    export type CommandFlagValue = true | string | undefined;
+
     export interface CommandFlags {
-        readonly [name: string]: string | string[] | undefined;
+        readonly [name: string]: CommandFlagValue | CommandFlagValue[]
     }
 
     export interface RichCommand {
