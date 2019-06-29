@@ -6,8 +6,9 @@
   "types": "./typings/index.d.ts",
   "scripts": {
     "lint": "eslint src",
+    "test": "mocha",
     "build": "babel src -d dist",
-    "prepublish": "npm run lint && npm run build"
+    "prepublish": "npm run lint && npm run build && npm run test"
   },
   "keywords": [
     "rich",
@@ -28,6 +29,8 @@
     "@babel/plugin-proposal-pipeline-operator": "^7.3.2",
     "@babel/preset-env": "^7.4.5",
     "babel-eslint": "^11.0.0-beta.0",
-    "eslint": "^5.16.0"
+    "chai": "^4.2.0",
+    "eslint": "^5.16.0",
+    "mocha": "^6.1.4"
   }
 }
