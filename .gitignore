@@ -86,3 +86,6 @@ jspm_packages/
 
 # Compied JS files
 dist/
+
+# VSCode workspace
+.vscode/
