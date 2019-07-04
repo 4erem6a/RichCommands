@@ -1,7 +1,8 @@
+/* eslint-disable max-len, quotes */
 const { describe, it } = require("mocha");
 const { expect } = require("chai");
 
-const { RichParserStream, parse } = require("../");
+const { parse } = require("../");
 
 describe("Parser Test", () => {
     it("Parse Simple", () => {
