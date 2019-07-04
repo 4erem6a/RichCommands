@@ -16,6 +16,14 @@ export class RichParserStream extends ParserStream {
         return rest;
     }
 
+    parts() {
+        const parts = [];
+        while (this.isValid()) {
+            parts.push(this.part());
+        }
+        return parts;
+    }
+
     part() {
         this.skipSeparators();
         return this.isValid() && (

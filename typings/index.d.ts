@@ -55,6 +55,8 @@ declare module "rich-commands" {
         public constructor(source: string, options: RichParserOptions);
 
         public rest(): string;
+
+        public parts(): CommandPart[];
         
         public part(): CommandPart | undefined;
 
