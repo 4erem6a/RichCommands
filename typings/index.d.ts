@@ -86,7 +86,7 @@ declare module "rich-commands" {
     }
 
     export interface RichCommand {
-        readonly args: string[];
+        readonly args: Array<string | undefined>;
         readonly flags: CommandFlags;
     }
 
