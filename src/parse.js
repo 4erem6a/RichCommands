@@ -8,17 +8,12 @@ export function parse(sourceOrStream, options = {}) {
             ...DEFAULT_RICH_PARSER_OPTIONS,
             ...options
         });
-    const args = [], flags = [];
-    while (stream.isValid()) {
-        const part = args.length >= options.argc - 1
-            ? stream.rest()
-            : stream.part();
-        if (typeof part == "object") {
-            flags.push(part);
-        } else {
-            args.push(part);
-        }
-    }
+    
+    const parts = stream.parts();
+
+    const args = parts.filter(part => typeof part != "object");
+    const flags = parts.filter(part => typeof part == "object");
+    
     return {
         args,
         flags: flagObject(flags, options.arrayFlagValues)
