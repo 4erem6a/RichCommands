@@ -4,8 +4,7 @@ import {
   CommandPart,
   CommandFlag,
   CommandArgument,
-  StringArgument,
-  EmptyArgument
+  StringArgument
 } from "./types";
 
 const FLAG_MODE = Symbol("FLAG_MODE");
