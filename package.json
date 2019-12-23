@@ -5,7 +5,8 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "./node_modules/.bin/tsc",
-    "watch": "./node_modules/.bin/tsc --watch"
+    "watch": "./node_modules/.bin/tsc --watch",
+    "docs": "./node_modules/.bin/typedoc --mode file --out docs src"
   },
   "keywords": [
     "rich",
@@ -17,6 +18,7 @@
   "license": "MIT",
   "repository": "git+https://github.com/4erem6a/RichCommands.git",
   "devDependencies": {
+    "typedoc": "^0.15.5",
     "typescript": "^3.7.4"
   },
   "dependencies": {

@@ -1,5 +1,3 @@
 src/
-.babelrc
-.eslintignore
-.eslintrc.yml
+docs/
 .gitignore
