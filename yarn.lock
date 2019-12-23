@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@4erem6a/inputstream@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@4erem6a/inputstream/-/inputstream-0.1.1.tgz#8147507ab65ad60fdd0119059a755d4f537af6ba"
+  integrity sha512-N3zwzBuiQC2yfaC1lvdgiuOYyk1HcwgqrNSDdqZKmBrtYF3aXlQv1ZR8CcUhYNj4wyNqBtVE712ktLqc9BqKhA==
+
 typescript@^3.7.4:
   version "3.7.4"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.7.4.tgz#1743a5ec5fef6a1fa9f3e4708e33c81c73876c19"

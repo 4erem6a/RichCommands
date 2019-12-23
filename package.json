@@ -18,5 +18,8 @@
   "repository": "git+https://github.com/4erem6a/RichCommands.git",
   "devDependencies": {
     "typescript": "^3.7.4"
+  },
+  "dependencies": {
+    "@4erem6a/inputstream": "^0.1.1"
   }
 }
