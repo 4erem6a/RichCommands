@@ -22,7 +22,11 @@
   ],
   "author": "4erem6a",
   "license": "MIT",
-  "repository": "git+https://github.com/4erem6a/RichCommands.git",
+  "homepage": "https://4erem6a.github.io/RichCommands",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/4erem6a/RichCommands.git"
+  },
   "devDependencies": {
     "jest": "^24.9.0",
     "typedoc": "^0.15.5",
