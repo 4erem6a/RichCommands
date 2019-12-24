@@ -3,10 +3,12 @@
   "version": "2.0.0",
   "description": "A command parser",
   "main": "dist/index.js",
+  "types": "./types",
   "scripts": {
     "build": "./node_modules/.bin/tsc",
     "watch": "./node_modules/.bin/tsc --watch",
     "docs": "./node_modules/.bin/typedoc --mode file --out docs src",
+    "test": "./node_modules/.bin/jest",
     "prepublishOnly": "yarn build && yarn docs"
   },
   "keywords": [
@@ -19,6 +21,7 @@
   "license": "MIT",
   "repository": "git+https://github.com/4erem6a/RichCommands.git",
   "devDependencies": {
+    "jest": "^24.9.0",
     "typedoc": "^0.15.5",
     "typescript": "^3.7.4"
   },
