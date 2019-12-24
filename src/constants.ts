@@ -1,5 +1,8 @@
 import { RichParserOptions } from "./RichParserOptions";
 
+/**
+ * Default rich parser options.
+ */
 export const defaultRichParserOptions: RichParserOptions = {
   quotes: ['"', ["(", ")"]],
   flagMarkers: ["--", "-"],
