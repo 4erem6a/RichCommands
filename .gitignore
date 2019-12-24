@@ -89,3 +89,6 @@ dist/
 
 # VSCode workspace
 .vscode/
+
+# Typescript declarations
+types/
