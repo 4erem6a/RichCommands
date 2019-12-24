@@ -5,11 +5,11 @@
   "main": "dist/index.js",
   "types": "./types",
   "scripts": {
-    "build": "./node_modules/.bin/tsc",
-    "watch": "./node_modules/.bin/tsc --watch",
+    "buildRelease": "./node_modules/.bin/tsc",
+    "buildDebug": "./node_modules/.bin/tsc --inlineSourceMap",
     "docs": "./node_modules/.bin/typedoc --mode file --out docs src",
     "test": "./node_modules/.bin/jest",
-    "prepublishOnly": "yarn build && yarn test"
+    "prepublishOnly": "yarn buildRelease && yarn test"
   },
   "jest": {
     "testEnvironment": "node"
