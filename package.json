@@ -11,6 +11,9 @@
     "test": "./node_modules/.bin/jest",
     "prepublishOnly": "yarn build && yarn test"
   },
+  "jest": {
+    "testEnvironment": "node"
+  },
   "keywords": [
     "rich",
     "commands",
