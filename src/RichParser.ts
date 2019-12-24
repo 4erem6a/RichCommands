@@ -55,7 +55,7 @@ export class RichParser {
   public part(): CommandPart | null {
     this.skipSeparators();
 
-    return (this.source.isValid && (this.flag() ?? this.argument())) || null;
+    return this.flag() ?? this.argument();
   }
 
   public flag(): CommandFlag | null {
@@ -134,6 +134,8 @@ export class RichParser {
       }
 
       current = this.source.next;
+
+      this.source.move(1);
     }
 
     return buffer;
@@ -165,6 +167,8 @@ export class RichParser {
 
       buffer += current;
       current = this.source.next;
+
+      this.source.move(1);
     }
 
     return buffer;
@@ -173,21 +177,21 @@ export class RichParser {
   private getClosingQuote(opening: string): string {
     const quotes = this.options.quotes ?? [];
 
-    const quote = quotes.find(q => {
+    const closingQuote = quotes.find(q => {
       q = Array.isArray(q) ? q[0] : q;
 
       return q == opening;
     }) as string;
 
-    return Array.isArray(quote) ? quote[0] : quote;
+    return Array.isArray(closingQuote) ? closingQuote[1] : closingQuote;
   }
 
   private findPresentingOpeningQuote(): string | undefined {
     const quotes = this.options.quotes ?? [];
 
-    const quote = quotes.map(q => (Array.isArray(q) ? q[0] : q));
+    const openingQuotes = quotes.map(q => (Array.isArray(q) ? q[0] : q));
 
-    return this.source.findPresenting(quote);
+    return this.source.findPresenting(openingQuotes);
   }
 
   private skipSeparators(): void {
