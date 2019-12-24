@@ -1,5 +1,6 @@
 import { RichParserOptions } from "./RichParserOptions";
 import { FlagObjectOptions, buildFlagObject } from "./buildFlagObject";
+import { defaultRichParserOptions } from "./constants";
 import { RichCommand } from "./types/types";
 import { RichParser } from "./RichParser";
 import { isArgument } from "./types/isArgument";
@@ -9,7 +10,10 @@ export function parse(
   source: string,
   options: RichParserOptions & FlagObjectOptions = {}
 ): RichCommand {
-  const parser = new RichParser(source, options);
+  const parser = new RichParser(source, {
+    ...defaultRichParserOptions,
+    ...options
+  });
 
   const raw = parser.parts();
 
