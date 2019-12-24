@@ -1,14 +1,18 @@
 {
   "name": "rich-commands",
-  "version": "1.1.7",
+  "version": "2.0.0",
   "description": "A command parser",
   "main": "dist/index.js",
-  "types": "./typings/index.d.ts",
+  "types": "./types",
   "scripts": {
-    "lint": "eslint src",
-    "test": "mocha",
-    "build": "babel src -d dist",
-    "prepublish": "npm run lint && npm run build && npm run test"
+    "buildRelease": "./node_modules/.bin/tsc",
+    "buildDebug": "./node_modules/.bin/tsc --inlineSourceMap",
+    "docs": "./node_modules/.bin/typedoc --mode file --out docs src",
+    "test": "./node_modules/.bin/jest",
+    "prepublishOnly": "yarn buildRelease && yarn test"
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "keywords": [
     "rich",
@@ -18,19 +22,13 @@
   ],
   "author": "4erem6a",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/4erem6a/RichCommands.git"
-  },
+  "repository": "git+https://github.com/4erem6a/RichCommands.git",
   "devDependencies": {
-    "@babel/cli": "^7.4.4",
-    "@babel/core": "^7.4.5",
-    "@babel/plugin-proposal-class-properties": "^7.4.4",
-    "@babel/plugin-proposal-pipeline-operator": "^7.3.2",
-    "@babel/preset-env": "^7.4.5",
-    "babel-eslint": "^11.0.0-beta.0",
-    "chai": "^4.2.0",
-    "eslint": "^5.16.0",
-    "mocha": "^6.1.4"
+    "jest": "^24.9.0",
+    "typedoc": "^0.15.5",
+    "typescript": "^3.7.4"
+  },
+  "dependencies": {
+    "@4erem6a/inputstream": "^0.1.1"
   }
 }
