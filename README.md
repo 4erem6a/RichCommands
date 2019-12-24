@@ -3,6 +3,8 @@ RichCommands is a simple, feature-rich and error-free command parser.
 
 [![npm version](https://badge.fury.io/js/rich-commands.svg)](https://www.npmjs.com/package/rich-commands)
 
+[Documentation](https://4erem6a.github.io/RichCommands/)
+
 ## Features
 + Simple API
 + Fully configurable syntax
