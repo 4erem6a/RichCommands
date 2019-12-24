@@ -9,7 +9,7 @@
     "watch": "./node_modules/.bin/tsc --watch",
     "docs": "./node_modules/.bin/typedoc --mode file --out docs src",
     "test": "./node_modules/.bin/jest",
-    "prepublishOnly": "yarn build && yarn docs"
+    "prepublishOnly": "yarn build && yarn test"
   },
   "keywords": [
     "rich",
