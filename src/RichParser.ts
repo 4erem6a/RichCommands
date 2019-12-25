@@ -95,7 +95,7 @@ export class RichParser {
   public part(): CommandPart | null {
     this.skipSeparators();
 
-    return this.flag() ?? this.argument();
+    return this.source.isValid ? this.flag() ?? this.argument() : null;
   }
 
   public flag(): CommandFlag | null {
