@@ -53,8 +53,15 @@ export class RichParser {
   /**
    * The current parsing mode.
    */
-  private get mode() {
+  private get mode(): any {
     return this.modeStack[this.modeStack.length - 1];
+  }
+
+  /**
+   * Resets the parser state.
+   */
+  public reset(): void {
+    this.source.reset();
   }
 
   /**
