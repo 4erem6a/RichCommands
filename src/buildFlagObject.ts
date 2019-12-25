@@ -16,7 +16,6 @@ export interface FlagObjectOptions {
   /**
    * If true, multiple flags with the same name will be merged into an array flag with all the values.
    * Otherwise, only the first flag with that name will be used.
-   * @default true
    */
   allowArrayValues?: boolean;
 }
@@ -28,8 +27,10 @@ export interface FlagObjectOptions {
  */
 export function buildFlagObject(
   flags: CommandFlag[],
-  { allowArrayValues = true }: FlagObjectOptions
+  options: FlagObjectOptions = { allowArrayValues: true }
 ): CommandFlags {
+  const { allowArrayValues } = options;
+
   const keys = [...new Set(flags.map(flag => flag.name))];
 
   const entries = keys.map(key => ({
