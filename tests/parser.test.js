@@ -94,4 +94,12 @@ describe("Parser tests", () => {
       }
     });
   });
+
+  test("Parse Blank", () => {
+    const source = `    `;
+
+    const result = parse(source);
+
+    expect(result).toEqual({ args: [], flags: {} });
+  });
 });
