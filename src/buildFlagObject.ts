@@ -1,4 +1,5 @@
-import { CommandFlag, CommandFlags, CommandFlagValue } from "./types/types";
+import { CommandFlag, CommandFlags } from "./types/types";
+import { defaultFlagObjectOptions } from "./constants";
 
 /**
  * Returns the first element of an array if it is the only one.
@@ -24,12 +25,14 @@ export interface FlagObjectOptions {
  * Creates the flag object from raw command flags.
  * @param flags Raw command flags.
  * @param options Flag object options.
+ * Flag object options override the {@link defaultFlagObjectOptions default ones},
+ * if you want to disable a flag object option then you should explicitly set it to undefined.
  */
 export function buildFlagObject(
   flags: CommandFlag[],
-  options: FlagObjectOptions = { allowArrayValues: true }
+  options: FlagObjectOptions = {}
 ): CommandFlags {
-  const { allowArrayValues } = options;
+  const { allowArrayValues } = { ...defaultFlagObjectOptions, ...options };
 
   const keys = [...new Set(flags.map(flag => flag.name))];
 
