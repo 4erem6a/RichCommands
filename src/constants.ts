@@ -10,7 +10,8 @@ export const defaultRichParserOptions: RichParserOptions = {
   flagValueMarkers: ["="],
   emptyArgMarkers: ["~"],
   escapeMarkers: ["\\"],
-  separators: [" ", "\n", "\r", "\t"]
+  separators: [" ", "\n", "\r", "\t"],
+  restMarkers: ["::"]
 };
 
 /**
