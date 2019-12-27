@@ -102,4 +102,15 @@ describe("Parser tests", () => {
 
     expect(result).toEqual({ args: [], flags: {} });
   });
+
+  test("Parse Rest", () => {
+    const source = `arg1 arg2 -f = x ::arg2 arg3 :: -y = z`;
+
+    const result = parse(source);
+
+    expect(result).toEqual({
+      args: ["arg1", "arg2", "arg2 arg3 :: -y = z"],
+      flags: { f: "x" }
+    });
+  });
 });
