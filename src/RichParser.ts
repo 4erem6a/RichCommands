@@ -76,6 +76,21 @@ export class RichParser {
   }
 
   /**
+   * Tries to match a rest marker.
+   * If matched, matches and returns the rest of the source as a string argument.
+   * Otherwise, returns null.
+   */
+  public markedRest(): StringArgument | null {
+    const restMarkers = this.options.restMarkers ?? [];
+
+    if (this.source.match(restMarkers)) {
+      return this.rest();
+    }
+
+    return null;
+  }
+
+  /**
    * Parses command parts while the source is valid and the desired part count is not reached (if set).
    * @param count Number of parts to parse.
    */
@@ -139,7 +154,7 @@ export class RichParser {
    * Tries to parse a command argument.
    */
   public argument(): CommandArgument {
-    return this.quoted() ?? this.simpleOrEmpty();
+    return this.markedRest() ?? this.quoted() ?? this.simpleOrEmpty();
   }
 
   /**
