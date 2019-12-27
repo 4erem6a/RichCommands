@@ -53,6 +53,7 @@ export interface RichCommand {
    * Command arguments.
    */
   args: Array<string | undefined>;
+
   /**
    * Command flags.
    */
