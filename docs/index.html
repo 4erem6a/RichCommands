@@ -77,6 +77,7 @@
 					<li>Simple API</li>
 					<li>Fully configurable syntax</li>
 					<li>Quoted arguments</li>
+					<li>Rest arguments</li>
 					<li>Escape markers</li>
 					<li>Empty arguments (Argument skipping)</li>
 					<li>Flags with optional values</li>
@@ -85,7 +86,7 @@
 				<a href="#example" id="example" style="color: inherit; text-decoration: none;">
 					<h2>Example</h2>
 				</a>
-				<pre><code class="language-js"><span class="hljs-keyword">const</span> { parse } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'rich-commands'</span>);
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> { parse } = <span class="hljs-built_in">require</span>(<span class="hljs-string">"rich-commands"</span>);
 
 <span class="hljs-keyword">const</span> command = <span class="hljs-string">'this -is=a "sample command"'</span>;
 
@@ -97,17 +98,18 @@
 				<a href="#grammar" id="grammar" style="color: inherit; text-decoration: none;">
 					<h2>Grammar</h2>
 				</a>
-				<pre><code>command     -&gt; commandPart*
-commandPart -&gt; argument | flag
+				<pre><code><span class="hljs-keyword">command</span>     -&gt; commandPart*
+commandPart -&gt; <span class="hljs-keyword">argument</span> | flag
 
-argument    -&gt; string | empty
-flag        -&gt; &lt;FlagMarker&gt; string [ &lt;FlagValueMarker&gt; argument ]
+<span class="hljs-keyword">argument</span>    -&gt; <span class="hljs-built_in">string</span> | <span class="hljs-built_in">empty</span>
+flag        -&gt; <span class="hljs-symbol">&lt;FlagMarker&gt;</span> <span class="hljs-built_in">string</span> [ <span class="hljs-symbol">&lt;FlagValueMarker&gt;</span> <span class="hljs-keyword">argument</span> ]
 
-string      -&gt; quoted |<span class="hljs-built_in"> simple
-</span>
-quoted      -&gt; &lt;OpeningQuote&gt; (&lt;any&gt; - &lt;ClosingQuote&gt;)* &lt;ClosingQuote&gt;<span class="hljs-built_in">
-simple </span>     -&gt; (&lt;any&gt; - &lt;Separators&gt; - &lt;OpeningQuotes&gt;)+
-empty       -&gt; &lt;EmptyArgMarker&gt;</code></pre>
+<span class="hljs-built_in">string</span>      -&gt; rest | quoted | simple
+
+rest        -&gt; <span class="hljs-symbol">&lt;RestMarker&gt;</span> <span class="hljs-symbol">&lt;any&gt;</span>*
+quoted      -&gt; <span class="hljs-symbol">&lt;OpeningQuote&gt;</span> (<span class="hljs-symbol">&lt;any&gt;</span> - <span class="hljs-symbol">&lt;ClosingQuote&gt;</span>)* <span class="hljs-symbol">&lt;ClosingQuote&gt;</span>
+simple      -&gt; (<span class="hljs-symbol">&lt;any&gt;</span> - <span class="hljs-symbol">&lt;Separators&gt;</span> - <span class="hljs-symbol">&lt;OpeningQuotes&gt;</span>)+
+<span class="hljs-built_in">empty</span>       -&gt; <span class="hljs-symbol">&lt;EmptyArgMarker&gt;</span></code></pre>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
