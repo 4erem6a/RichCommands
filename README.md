@@ -11,6 +11,7 @@ RichCommands is a simple, feature-rich and error-free command parser.
 - Simple API
 - Fully configurable syntax
 - Quoted arguments
+- Rest arguments
 - Escape markers
 - Empty arguments (Argument skipping)
 - Flags with optional values
