@@ -35,4 +35,10 @@ export interface RichParserOptions {
    * Also can be used to escape themselves.
    */
   escapeMarkers?: string[];
+
+  /**
+   * When the parser reaches a rest marker,
+   * it parses the rest of the source as a string argument.
+   */
+  restMarkers?: string[];
 }
