@@ -2,6 +2,7 @@ export * from "./types/types";
 export * from "./types/isArgument";
 export * from "./types/isFlag";
 export * from "./buildFlagObject";
+export * from "./buildRichArgv";
 export * from "./constants";
 export * from "./parse";
 export * from "./RichParser";
