@@ -281,7 +281,7 @@ export class RichParser {
   /**
    * Skips all subsequent separators.
    */
-  private skipSeparators(): void {
+  public skipSeparators(): void {
     const separators = this.options.separators ?? [];
 
     while (this.source.match(separators));
