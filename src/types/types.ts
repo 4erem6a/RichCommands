@@ -48,7 +48,7 @@ export type CommandFlags = {
 /**
  * Represents a parsed command.
  */
-export interface RichCommand {
+export interface RichArgv {
   /**
    * Command arguments.
    */

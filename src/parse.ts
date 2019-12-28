@@ -1,13 +1,13 @@
 import { RichParserOptions } from "./RichParserOptions";
 import { FlagObjectOptions, buildFlagObject } from "./buildFlagObject";
 import { defaultRichParserOptions } from "./constants";
-import { RichCommand } from "./types/types";
+import { RichArgv } from "./types/types";
 import { RichParser } from "./RichParser";
 import { isArgument } from "./types/isArgument";
 import { isFlag } from "./types/isFlag";
 
 /**
- * Parses the source string to a {@link RichCommand rich command}.
+ * Parses the source string to a {@link RichArgv}.
  * @param source The source string.
  * @param options Parsing and processing options.
  * Parsing options override the {@link defaultRichParserOptions default ones},
@@ -16,7 +16,7 @@ import { isFlag } from "./types/isFlag";
 export function parse(
   source: string,
   options: RichParserOptions & FlagObjectOptions = {}
-): RichCommand {
+): RichArgv {
   const parser = new RichParser(source, {
     ...defaultRichParserOptions,
     ...options
