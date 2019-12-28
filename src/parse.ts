@@ -5,6 +5,7 @@ import { RichArgv } from "./types/types";
 import { RichParser } from "./RichParser";
 import { isArgument } from "./types/isArgument";
 import { isFlag } from "./types/isFlag";
+import { buildRichArgv } from "./buildRichArgv";
 
 /**
  * Parses the source string to a {@link RichArgv}.
@@ -22,10 +23,7 @@ export function parse(
     ...options
   });
 
-  const raw = parser.parts();
+  const parts = parser.parts();
 
-  const args = raw.filter(isArgument);
-  const flags = buildFlagObject(raw.filter(isFlag), options);
-
-  return { args, flags };
+  return buildRichArgv(parts, options);
 }
