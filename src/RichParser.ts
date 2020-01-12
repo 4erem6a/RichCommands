@@ -101,7 +101,7 @@ export class RichParser {
       this.source.isValid &&
       (count == undefined || parts.length < count)
     ) {
-      const part = this.part();
+      const part = this.commandPart();
 
       if (part !== null) {
         parts.push(part);
@@ -114,7 +114,7 @@ export class RichParser {
   /**
    * Tries to parse a command part.
    */
-  public part(): CommandPart | null {
+  public commandPart(): CommandPart | null {
     this.skipSeparators();
 
     return this.source.isValid ? this.flag() ?? this.argument() : null;
