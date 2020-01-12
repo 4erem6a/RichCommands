@@ -1,7 +1,7 @@
-import { CommandPart, RichArgv } from "./types/types";
+import { CommandPart, RichArgv } from "../types/types";
 import { FlagObjectOptions, createFlagObject } from "./createFlagObject";
-import { isArgument } from "./types/isArgument";
-import { isFlag } from "./types/isFlag";
+import { isArgument } from "../types/isArgument";
+import { isFlag } from "../types/isFlag";
 
 /**
  * Creates a {@link RichArgv} object from command parts.

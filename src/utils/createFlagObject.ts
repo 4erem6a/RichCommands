@@ -1,5 +1,5 @@
-import { CommandFlag, CommandFlags } from "./types/types";
-import { defaultFlagObjectOptions } from "./constants";
+import { CommandFlag, CommandFlags } from "../types/types";
+import { defaultFlagObjectOptions } from "../constants";
 
 /**
  * Returns the first element of an array if it is the only one.
