@@ -28,7 +28,7 @@ export interface FlagObjectOptions {
  * Flag object options override the {@link defaultFlagObjectOptions default ones},
  * if you want to disable a flag object option then you should explicitly set it to undefined.
  */
-export function buildFlagObject(
+export function createFlagObject(
   flags: CommandFlag[],
   options: FlagObjectOptions = {}
 ): CommandFlags {
