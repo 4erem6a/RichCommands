@@ -39,6 +39,21 @@ export interface CommandFlag {
 export type CommandPart = CommandArgument | CommandFlag;
 
 /**
+ * Represents a raw parsed command.
+ */
+export interface Command {
+  /**
+   * Command name.
+   */
+  name: string;
+
+  /**
+   * Command arguments and flags.
+   */
+  parts: CommandPart[];
+}
+
+/**
  * Object containing command flag values by their names.
  */
 export type CommandFlags = {
