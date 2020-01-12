@@ -61,7 +61,7 @@ export type CommandFlags = {
 };
 
 /**
- * Represents a parsed command.
+ * Represents command arguments and flags.
  */
 export interface RichArgv {
   /**
@@ -73,4 +73,14 @@ export interface RichArgv {
    * Command flags.
    */
   flags: CommandFlags;
+}
+
+/**
+ * Represents a parsed command.
+ */
+export interface RichCommand extends RichArgv {
+  /**
+   * Command name.
+   */
+  name: string;
 }
