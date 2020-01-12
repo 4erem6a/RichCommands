@@ -105,6 +105,9 @@ export class RichParser {
     return this.source.isValid ? this.flag() ?? this.argument() : null;
   }
 
+  /**
+   * Tries to parse a command flag.
+   */
   public flag(): CommandFlag | null {
     const flagMarkers = this.options.flagMarkers ?? [];
 
@@ -129,7 +132,7 @@ export class RichParser {
     const valueMarkers = this.options.flagValueMarkers ?? [];
 
     const value = this.source.match(valueMarkers)
-      ? (this.skipSeparators(), this.argument())
+      ? (this.skipSeparators(), this.argument()) ?? true
       : true;
 
     return { name, value };
@@ -138,7 +141,7 @@ export class RichParser {
   /**
    * Tries to parse a command argument.
    */
-  public argument(): CommandArgument {
+  public argument(): CommandArgument | null {
     return this.rest() ?? this.quoted() ?? this.simpleOrEmpty();
   }
 
@@ -158,9 +161,9 @@ export class RichParser {
   }
 
   /**
-   * Parses a string argument.
+   * Tries to parse a string argument.
    */
-  public string(): StringArgument {
+  public string(): StringArgument | null {
     return this.quoted() ?? this.simple();
   }
 
@@ -213,20 +216,20 @@ export class RichParser {
   }
 
   /**
-   * Parses a simple or an empty argument.
+   * Tries to parse a simple or an empty argument.
    */
-  public simpleOrEmpty(): CommandArgument {
+  public simpleOrEmpty(): CommandArgument | null {
     const emptyMarkers = this.options.emptyArgMarkers ?? [];
 
     const simple = this.simple();
 
-    return emptyMarkers.includes(simple) ? undefined : simple;
+    return simple && emptyMarkers.includes(simple) ? undefined : simple;
   }
 
   /**
-   * Parses a simple string argument (anything which is not a marker).
+   * Tries to parse a simple string argument (anything which is not a marker).
    */
-  public simple(): StringArgument {
+  public simple(): StringArgument | null {
     const separators = this.options.separators ?? [];
     const valueMarkers = this.options.flagValueMarkers ?? [];
 
@@ -248,7 +251,7 @@ export class RichParser {
       this.source.move(1);
     }
 
-    return buffer;
+    return buffer || null;
   }
 
   /**
