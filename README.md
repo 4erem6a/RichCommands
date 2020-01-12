@@ -38,7 +38,7 @@ Expected result:
 ## Grammar
 
 ```
-command     -> commandPart*
+command     -> string commandPart*
 commandPart -> argument | flag
 
 argument    -> string | empty
@@ -49,5 +49,6 @@ string      -> rest | quoted | simple
 rest        -> <RestMarker> <any>*
 quoted      -> <OpeningQuote> (<any> - <ClosingQuote>)* <ClosingQuote>
 simple      -> (<any> - <Separators> - <OpeningQuotes>)+
+
 empty       -> <EmptyArgMarker>
 ```
