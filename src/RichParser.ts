@@ -4,7 +4,8 @@ import {
   CommandPart,
   CommandFlag,
   CommandArgument,
-  StringArgument
+  StringArgument,
+  Command
 } from "./types/types";
 
 /**
@@ -73,6 +74,21 @@ export class RichParser {
     this.source.move(rest.length);
 
     return rest;
+  }
+
+  /**
+   * Tries to parse a command.
+   */
+  public command(): Command | null {
+    const name = this.string();
+
+    if (!name) {
+      return null;
+    }
+
+    const parts = this.commandParts();
+
+    return { name, parts };
   }
 
   /**
