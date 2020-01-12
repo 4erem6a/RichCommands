@@ -94,7 +94,7 @@ export class RichParser {
    * Parses command parts while the source is valid and the desired part count is not reached (if set).
    * @param count Number of parts to parse.
    */
-  public parts(count?: number): CommandPart[] {
+  public commandParts(count?: number): CommandPart[] {
     const parts: CommandPart[] = [];
 
     while (
