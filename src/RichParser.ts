@@ -80,7 +80,7 @@ export class RichParser {
    * If matched, matches and returns the rest of the source as a string argument.
    * Otherwise, returns null.
    */
-  public markedRest(): StringArgument | null {
+  public rest(): StringArgument | null {
     const restMarkers = this.options.restMarkers ?? [];
 
     if (this.source.match(restMarkers)) {
@@ -154,7 +154,7 @@ export class RichParser {
    * Tries to parse a command argument.
    */
   public argument(): CommandArgument {
-    return this.markedRest() ?? this.quoted() ?? this.simpleOrEmpty();
+    return this.rest() ?? this.quoted() ?? this.simpleOrEmpty();
   }
 
   /**
