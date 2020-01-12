@@ -67,7 +67,7 @@ export class RichParser {
   /**
    * Matches the rest of the source and returns it as a string.
    */
-  public rest(): StringArgument {
+  public matchRest(): StringArgument {
     const rest = this.source.rest;
 
     this.source.move(rest.length);
@@ -84,7 +84,7 @@ export class RichParser {
     const restMarkers = this.options.restMarkers ?? [];
 
     if (this.source.match(restMarkers)) {
-      return this.rest();
+      return this.matchRest();
     }
 
     return null;
