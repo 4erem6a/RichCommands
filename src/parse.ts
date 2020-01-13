@@ -1,12 +1,12 @@
-import { RichParserOptions } from "./types/RichParserOptions";
+import { ParserOptions } from "./types/ParserOptions";
 import { FlagObjectOptions } from "./utils/createFlagObject";
-import { defaultRichParserOptions } from "./constants";
+import { defaultParserOptions } from "./constants";
 import { RichArgv, RichCommand } from "./types/types";
-import { RichParser } from "./RichParser";
+import { Parser } from "./Parser";
 import { createRichArgv } from "./utils/createRichArgv";
 import { createRichCommand } from "./utils/createRichCommand";
 
-type ParseOptions = RichParserOptions & Partial<FlagObjectOptions>;
+type ParseOptions = ParserOptions & Partial<FlagObjectOptions>;
 
 /**
  * Parses the source string to a {@link RichArgv}.
@@ -19,8 +19,8 @@ export function parseArgs(
   source: string,
   options: ParseOptions = {}
 ): RichArgv {
-  const parser = new RichParser(source, {
-    ...defaultRichParserOptions,
+  const parser = new Parser(source, {
+    ...defaultParserOptions,
     ...options
   });
 
@@ -41,8 +41,8 @@ export function parseCommand(
   source: string,
   options: ParseOptions = {}
 ): RichCommand | null {
-  const parser = new RichParser(source, {
-    ...defaultRichParserOptions,
+  const parser = new Parser(source, {
+    ...defaultParserOptions,
     ...options
   });
 

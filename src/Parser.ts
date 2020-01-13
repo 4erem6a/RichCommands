@@ -1,5 +1,5 @@
 import { InputStream } from "@4erem6a/inputstream";
-import { RichParserOptions } from "./types/RichParserOptions";
+import { ParserOptions } from "./types/ParserOptions";
 import {
   CommandPart,
   CommandFlag,
@@ -26,7 +26,7 @@ export class Parser {
   /**
    * The parser options.
    */
-  public readonly options: RichParserOptions;
+  public readonly options: ParserOptions;
 
   /**
    * The parsing mode stack.
@@ -37,15 +37,15 @@ export class Parser {
    * @param source The source string.
    * @param options The parser options.
    */
-  public constructor(source: string, options: RichParserOptions);
+  public constructor(source: string, options: ParserOptions);
 
   /**
    * @param source The source input stream.
    * @param options The parser options.
    */
-  public constructor(source: InputStream, options: RichParserOptions);
+  public constructor(source: InputStream, options: ParserOptions);
 
-  public constructor(source: string | InputStream, options: RichParserOptions) {
+  public constructor(source: string | InputStream, options: ParserOptions) {
     this.source =
       source instanceof InputStream ? source : new InputStream(source);
     this.options = options;
