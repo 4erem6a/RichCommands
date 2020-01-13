@@ -9,10 +9,10 @@ import { isFlag } from "../types/isFlag";
  */
 export function createRichArgv(
   parts: CommandPart[],
-  flagObjectOptions?: FlagObjectOptions
+  options?: Partial<FlagObjectOptions>
 ): RichArgv {
   const args = parts.filter(isArgument);
-  const flags = createFlagObject(parts.filter(isFlag), flagObjectOptions);
+  const flags = createFlagObject(parts.filter(isFlag), options);
 
   return { args, flags };
 }
