@@ -113,4 +113,24 @@ describe("Parser tests", () => {
       flags: { f: "x" }
     });
   });
+
+  test("Parse Command", () => {
+    const source = `npm i -D typescript`;
+
+    const result = parseCommand(source);
+
+    expect(result).toEqual({
+      name: "npm",
+      args: ["i", "typescript"],
+      flags: { D: true }
+    });
+  });
+
+  test("Parse Invalid Command", () => {
+    const source = `-D typescript i npm`;
+
+    const result = parseCommand(source);
+
+    expect(result).toBe(null);
+  });
 });
