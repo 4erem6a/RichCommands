@@ -17,7 +17,7 @@ const FLAG_MODE = Symbol("FLAG_MODE");
 /**
  * Class for parsing commands.
  */
-export class RichParser {
+export class Parser {
   /**
    * The source input stream.
    */
