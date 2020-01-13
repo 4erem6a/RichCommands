@@ -114,6 +114,17 @@ describe("Parser tests", () => {
     });
   });
 
+  test("Parse Empty Args", () => {
+    const source = ``;
+
+    const result = parseArgs(source);
+
+    expect(result).toEqual({
+      args: [],
+      flags: {}
+    });
+  });
+
   test("Parse Command", () => {
     const source = `npm i -D typescript`;
 
@@ -127,7 +138,7 @@ describe("Parser tests", () => {
   });
 
   test("Parse Invalid Command", () => {
-    const source = `-D typescript i npm`;
+    const source = ``;
 
     const result = parseCommand(source);
 
