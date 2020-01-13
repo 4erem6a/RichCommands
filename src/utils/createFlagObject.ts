@@ -18,7 +18,12 @@ export interface FlagObjectOptions {
    * If true, multiple flags with the same name will be merged into an array flag with all the values.
    * Otherwise, only the first flag with that name will be used.
    */
-  allowArrayValues?: boolean;
+  allowArrayValues: boolean;
+
+  /**
+   * Whether flags names are case insensitive.
+   */
+  caseInsensitiveFlags: boolean;
 }
 
 /**
@@ -30,18 +35,23 @@ export interface FlagObjectOptions {
  */
 export function createFlagObject(
   flags: CommandFlag[],
-  options: FlagObjectOptions = {}
+  options: Partial<FlagObjectOptions> = {}
 ): CommandFlags {
   const { allowArrayValues } = { ...defaultFlagObjectOptions, ...options };
 
   const keys = [...new Set(flags.map(flag => flag.name))];
 
+  const flagNameFilter = (name: string) => (flag: CommandFlag) =>
+    flag.name.localeCompare(name, undefined, {
+      sensitivity: options.caseInsensitiveFlags ? "accent" : "variant"
+    });
+
   const entries = keys.map(key => ({
     [key]: allowArrayValues
       ? getFirstIfOnly(
-          flags.filter(flag => flag.name == key).map(flag => flag.value)
+          flags.filter(flagNameFilter(key)).map(flag => flag.value)
         )
-      : flags.find(flag => flag.name == key)?.value
+      : flags.find(flagNameFilter(key))?.value
   }));
 
   return entries.reduce((acc, v) => ({ ...acc, ...v }), {});
