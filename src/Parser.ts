@@ -80,6 +80,8 @@ export class Parser {
    * Tries to parse a command.
    */
   public command(): Command | null {
+    this.skipSeparators();
+
     const name = this.string();
 
     if (!name) {
