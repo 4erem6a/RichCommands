@@ -91,4 +91,4 @@ dist/
 .vscode/
 
 # Typescript declarations
-types/
+/types/
