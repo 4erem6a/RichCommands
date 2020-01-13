@@ -1,11 +1,13 @@
-import { RichParserOptions } from "./RichParserOptions";
-import { FlagObjectOptions, buildFlagObject } from "./buildFlagObject";
+import { RichParserOptions } from "./types/RichParserOptions";
+import { FlagObjectOptions, createFlagObject } from "./utils/createFlagObject";
 import { defaultRichParserOptions } from "./constants";
 import { RichArgv } from "./types/types";
 import { RichParser } from "./RichParser";
 import { isArgument } from "./types/isArgument";
 import { isFlag } from "./types/isFlag";
-import { buildRichArgv } from "./buildRichArgv";
+import { createRichArgv } from "./utils/createRichArgv";
+
+type ParseOptions = RichParserOptions & Partial<FlagObjectOptions>;
 
 /**
  * Parses the source string to a {@link RichArgv}.
@@ -14,16 +16,16 @@ import { buildRichArgv } from "./buildRichArgv";
  * Parsing options override the {@link defaultRichParserOptions default ones},
  * if you want to disable a parsing option then you should explicitly set it to undefined.
  */
-export function parse(
+export function parseArgs(
   source: string,
-  options: RichParserOptions & FlagObjectOptions = {}
+  options: ParseOptions = {}
 ): RichArgv {
   const parser = new RichParser(source, {
     ...defaultRichParserOptions,
     ...options
   });
 
-  const parts = parser.parts();
+  const parts = parser.commandParts();
 
-  return buildRichArgv(parts, options);
+  return createRichArgv(parts, options);
 }
