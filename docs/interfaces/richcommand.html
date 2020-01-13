@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>RichArgv | rich-commands</title>
+	<title>RichCommand | rich-commands</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="richargv.html">RichArgv</a>
+					<a href="richcommand.html">RichCommand</a>
 				</li>
 			</ul>
-			<h1>Interface RichArgv</h1>
+			<h1>Interface RichCommand</h1>
 		</div>
 	</div>
 </header>
@@ -69,7 +69,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Represents command arguments and flags.</p>
+						<p>Represents a parsed command.</p>
 					</div>
 				</div>
 			</section>
@@ -77,10 +77,10 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">RichArgv</span>
+						<a href="richargv.html" class="tsd-signature-type">RichArgv</a>
 						<ul class="tsd-hierarchy">
 							<li>
-								<a href="richcommand.html" class="tsd-signature-type">RichCommand</a>
+								<span class="target">RichCommand</span>
 							</li>
 						</ul>
 					</li>
@@ -93,8 +93,9 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="richargv.html#args" class="tsd-kind-icon">args</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="richargv.html#flags" class="tsd-kind-icon">flags</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="richcommand.html#args" class="tsd-kind-icon">args</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="richcommand.html#flags" class="tsd-kind-icon">flags</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="richcommand.html#name" class="tsd-kind-icon">name</a></li>
 							</ul>
 						</section>
 					</div>
@@ -102,11 +103,12 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
 					<a name="args" class="tsd-anchor"></a>
 					<h3>args</h3>
 					<div class="tsd-signature tsd-kind-icon">args<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
+						<p>Inherited from <a href="richargv.html">RichArgv</a>.<a href="richargv.html#args">args</a></p>
 						<ul>
 							<li>Defined in <a href="https://github.com/4erem6a/RichCommands/blob/cd65fa3/src/types/types.ts#L70">types/types.ts:70</a></li>
 						</ul>
@@ -117,11 +119,12 @@
 						</div>
 					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
 					<a name="flags" class="tsd-anchor"></a>
 					<h3>flags</h3>
 					<div class="tsd-signature tsd-kind-icon">flags<span class="tsd-signature-symbol">:</span> <a href="../globals.html#commandflags" class="tsd-signature-type">CommandFlags</a></div>
 					<aside class="tsd-sources">
+						<p>Inherited from <a href="richargv.html">RichArgv</a>.<a href="richargv.html#flags">flags</a></p>
 						<ul>
 							<li>Defined in <a href="https://github.com/4erem6a/RichCommands/blob/cd65fa3/src/types/types.ts#L75">types/types.ts:75</a></li>
 						</ul>
@@ -129,6 +132,21 @@
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>Command flags.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="name" class="tsd-anchor"></a>
+					<h3>name</h3>
+					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/4erem6a/RichCommands/blob/cd65fa3/src/types/types.ts#L85">types/types.ts:85</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Command name.</p>
 						</div>
 					</div>
 				</section>
@@ -159,24 +177,27 @@
 					<li class=" tsd-kind-interface">
 						<a href="parseroptions.html" class="tsd-kind-icon">Parser<wbr>Options</a>
 					</li>
+					<li class=" tsd-kind-interface">
+						<a href="richargv.html" class="tsd-kind-icon">Rich<wbr>Argv</a>
+					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="richargv.html" class="tsd-kind-icon">Rich<wbr>Argv</a>
+						<a href="richcommand.html" class="tsd-kind-icon">Rich<wbr>Command</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="richargv.html#args" class="tsd-kind-icon">args</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="richcommand.html#args" class="tsd-kind-icon">args</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="richcommand.html#flags" class="tsd-kind-icon">flags</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="richargv.html#flags" class="tsd-kind-icon">flags</a>
+								<a href="richcommand.html#name" class="tsd-kind-icon">name</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-interface">
-						<a href="richcommand.html" class="tsd-kind-icon">Rich<wbr>Command</a>
-					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="../globals.html#commandargument" class="tsd-kind-icon">Command<wbr>Argument</a>
 					</li>

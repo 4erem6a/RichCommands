@@ -70,16 +70,18 @@
 						<section class="tsd-index-section ">
 							<h3>Classes</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-class"><a href="classes/richparser.html" class="tsd-kind-icon">Rich<wbr>Parser</a></li>
+								<li class="tsd-kind-class"><a href="classes/parser.html" class="tsd-kind-icon">Parser</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Interfaces</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-interface"><a href="interfaces/command.html" class="tsd-kind-icon">Command</a></li>
 								<li class="tsd-kind-interface"><a href="interfaces/commandflag.html" class="tsd-kind-icon">Command<wbr>Flag</a></li>
 								<li class="tsd-kind-interface"><a href="interfaces/flagobjectoptions.html" class="tsd-kind-icon">Flag<wbr>Object<wbr>Options</a></li>
+								<li class="tsd-kind-interface"><a href="interfaces/parseroptions.html" class="tsd-kind-icon">Parser<wbr>Options</a></li>
 								<li class="tsd-kind-interface"><a href="interfaces/richargv.html" class="tsd-kind-icon">Rich<wbr>Argv</a></li>
-								<li class="tsd-kind-interface"><a href="interfaces/richparseroptions.html" class="tsd-kind-icon">Rich<wbr>Parser<wbr>Options</a></li>
+								<li class="tsd-kind-interface"><a href="interfaces/richcommand.html" class="tsd-kind-icon">Rich<wbr>Command</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -90,24 +92,27 @@
 								<li class="tsd-kind-type-alias"><a href="globals.html#commandflags" class="tsd-kind-icon">Command<wbr>Flags</a></li>
 								<li class="tsd-kind-type-alias"><a href="globals.html#commandpart" class="tsd-kind-icon">Command<wbr>Part</a></li>
 								<li class="tsd-kind-type-alias"><a href="globals.html#emptyargument" class="tsd-kind-icon">Empty<wbr>Argument</a></li>
+								<li class="tsd-kind-type-alias tsd-is-not-exported"><a href="globals.html#parseoptions" class="tsd-kind-icon">Parse<wbr>Options</a></li>
 								<li class="tsd-kind-type-alias"><a href="globals.html#stringargument" class="tsd-kind-icon">String<wbr>Argument</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function"><a href="globals.html#buildflagobject" class="tsd-kind-icon">build<wbr>Flag<wbr>Object</a></li>
-								<li class="tsd-kind-function"><a href="globals.html#buildrichargv" class="tsd-kind-icon">build<wbr>Rich<wbr>Argv</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#createflagobject" class="tsd-kind-icon">create<wbr>Flag<wbr>Object</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#createrichargv" class="tsd-kind-icon">create<wbr>Rich<wbr>Argv</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#createrichcommand" class="tsd-kind-icon">create<wbr>Rich<wbr>Command</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#isargument" class="tsd-kind-icon">is<wbr>Argument</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#isflag" class="tsd-kind-icon">is<wbr>Flag</a></li>
-								<li class="tsd-kind-function"><a href="globals.html#parse" class="tsd-kind-icon">parse</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#parseargs" class="tsd-kind-icon">parse<wbr>Args</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#parsecommand" class="tsd-kind-icon">parse<wbr>Command</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Object literals</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-object-literal"><a href="globals.html#defaultflagobjectoptions" class="tsd-kind-icon">default<wbr>Flag<wbr>Object<wbr>Options</a></li>
-								<li class="tsd-kind-object-literal"><a href="globals.html#defaultrichparseroptions" class="tsd-kind-icon">default<wbr>Rich<wbr>Parser<wbr>Options</a></li>
+								<li class="tsd-kind-object-literal"><a href="globals.html#defaultparseroptions" class="tsd-kind-icon">default<wbr>Parser<wbr>Options</a></li>
 							</ul>
 						</section>
 					</div>
@@ -121,7 +126,7 @@
 					<div class="tsd-signature tsd-kind-icon">Command<wbr>Argument<span class="tsd-signature-symbol">:</span> <a href="globals.html#stringargument" class="tsd-signature-type">StringArgument</a><span class="tsd-signature-symbol"> | </span><a href="globals.html#emptyargument" class="tsd-signature-type">EmptyArgument</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/4erem6a/RichCommands/blob/916eca3/src/types/types.ts#L14">types/types.ts:14</a></li>
+							<li>Defined in <a href="https://github.com/4erem6a/RichCommands/blob/cd65fa3/src/types/types.ts#L14">types/types.ts:14</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -136,7 +141,7 @@
 					<div class="tsd-signature tsd-kind-icon">Command<wbr>Flag<wbr>Value<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/4erem6a/RichCommands/blob/916eca3/src/types/types.ts#L19">types/types.ts:19</a></li>
+							<li>Defined in <a href="https://github.com/4erem6a/RichCommands/blob/cd65fa3/src/types/types.ts#L19">types/types.ts:19</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -151,7 +156,7 @@
 					<div class="tsd-signature tsd-kind-icon">Command<wbr>Flags<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/4erem6a/RichCommands/blob/916eca3/src/types/types.ts#L44">types/types.ts:44</a></li>
+							<li>Defined in <a href="https://github.com/4erem6a/RichCommands/blob/cd65fa3/src/types/types.ts#L59">types/types.ts:59</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -174,7 +179,7 @@
 					<div class="tsd-signature tsd-kind-icon">Command<wbr>Part<span class="tsd-signature-symbol">:</span> <a href="globals.html#commandargument" class="tsd-signature-type">CommandArgument</a><span class="tsd-signature-symbol"> | </span><a href="interfaces/commandflag.html" class="tsd-signature-type">CommandFlag</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/4erem6a/RichCommands/blob/916eca3/src/types/types.ts#L39">types/types.ts:39</a></li>
+							<li>Defined in <a href="https://github.com/4erem6a/RichCommands/blob/cd65fa3/src/types/types.ts#L39">types/types.ts:39</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -189,7 +194,7 @@
 					<div class="tsd-signature tsd-kind-icon">Empty<wbr>Argument<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/4erem6a/RichCommands/blob/916eca3/src/types/types.ts#L9">types/types.ts:9</a></li>
+							<li>Defined in <a href="https://github.com/4erem6a/RichCommands/blob/cd65fa3/src/types/types.ts#L9">types/types.ts:9</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -198,13 +203,23 @@
 						</div>
 					</div>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-is-not-exported">
+					<a name="parseoptions" class="tsd-anchor"></a>
+					<h3>Parse<wbr>Options</h3>
+					<div class="tsd-signature tsd-kind-icon">Parse<wbr>Options<span class="tsd-signature-symbol">:</span> <a href="interfaces/parseroptions.html" class="tsd-signature-type">ParserOptions</a><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/flagobjectoptions.html" class="tsd-signature-type">FlagObjectOptions</a><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/4erem6a/RichCommands/blob/cd65fa3/src/parse.ts#L9">parse.ts:9</a></li>
+						</ul>
+					</aside>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias">
 					<a name="stringargument" class="tsd-anchor"></a>
 					<h3>String<wbr>Argument</h3>
 					<div class="tsd-signature tsd-kind-icon">String<wbr>Argument<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/4erem6a/RichCommands/blob/916eca3/src/types/types.ts#L4">types/types.ts:4</a></li>
+							<li>Defined in <a href="https://github.com/4erem6a/RichCommands/blob/cd65fa3/src/types/types.ts#L4">types/types.ts:4</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -217,16 +232,16 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function">
-					<a name="buildflagobject" class="tsd-anchor"></a>
-					<h3>build<wbr>Flag<wbr>Object</h3>
+					<a name="createflagobject" class="tsd-anchor"></a>
+					<h3>create<wbr>Flag<wbr>Object</h3>
 					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">build<wbr>Flag<wbr>Object<span class="tsd-signature-symbol">(</span>flags<span class="tsd-signature-symbol">: </span><a href="interfaces/commandflag.html" class="tsd-signature-type">CommandFlag</a><span class="tsd-signature-symbol">[]</span>, options<span class="tsd-signature-symbol">?: </span><a href="interfaces/flagobjectoptions.html" class="tsd-signature-type">FlagObjectOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="globals.html#commandflags" class="tsd-signature-type">CommandFlags</a></li>
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Flag<wbr>Object<span class="tsd-signature-symbol">(</span>flags<span class="tsd-signature-symbol">: </span><a href="interfaces/commandflag.html" class="tsd-signature-type">CommandFlag</a><span class="tsd-signature-symbol">[]</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/flagobjectoptions.html" class="tsd-signature-type">FlagObjectOptions</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="globals.html#commandflags" class="tsd-signature-type">CommandFlags</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/4erem6a/RichCommands/blob/916eca3/src/buildFlagObject.ts#L31">buildFlagObject.ts:31</a></li>
+									<li>Defined in <a href="https://github.com/4erem6a/RichCommands/blob/cd65fa3/src/utils/createFlagObject.ts#L36">utils/createFlagObject.ts:36</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -243,7 +258,7 @@
 									</div>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> options: <a href="interfaces/flagobjectoptions.html" class="tsd-signature-type">FlagObjectOptions</a><span class="tsd-signature-symbol"> =&nbsp;{}</span></h5>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> options: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/flagobjectoptions.html" class="tsd-signature-type">FlagObjectOptions</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;{}</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>Flag object options.
 											Flag object options override the <a href="globals.html#defaultflagobjectoptions">default ones</a>,
@@ -256,16 +271,16 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function">
-					<a name="buildrichargv" class="tsd-anchor"></a>
-					<h3>build<wbr>Rich<wbr>Argv</h3>
+					<a name="createrichargv" class="tsd-anchor"></a>
+					<h3>create<wbr>Rich<wbr>Argv</h3>
 					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">build<wbr>Rich<wbr>Argv<span class="tsd-signature-symbol">(</span>parts<span class="tsd-signature-symbol">: </span><a href="globals.html#commandpart" class="tsd-signature-type">CommandPart</a><span class="tsd-signature-symbol">[]</span>, flagObjectOptions<span class="tsd-signature-symbol">?: </span><a href="interfaces/flagobjectoptions.html" class="tsd-signature-type">FlagObjectOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="interfaces/richargv.html" class="tsd-signature-type">RichArgv</a></li>
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Rich<wbr>Argv<span class="tsd-signature-symbol">(</span>parts<span class="tsd-signature-symbol">: </span><a href="globals.html#commandpart" class="tsd-signature-type">CommandPart</a><span class="tsd-signature-symbol">[]</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/flagobjectoptions.html" class="tsd-signature-type">FlagObjectOptions</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="interfaces/richargv.html" class="tsd-signature-type">RichArgv</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/4erem6a/RichCommands/blob/916eca3/src/buildRichArgv.ts#L10">buildRichArgv.ts:10</a></li>
+									<li>Defined in <a href="https://github.com/4erem6a/RichCommands/blob/cd65fa3/src/utils/createRichArgv.ts#L10">utils/createRichArgv.ts:10</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -282,10 +297,41 @@
 									</div>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> flagObjectOptions: <a href="interfaces/flagobjectoptions.html" class="tsd-signature-type">FlagObjectOptions</a></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/flagobjectoptions.html" class="tsd-signature-type">FlagObjectOptions</a><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="interfaces/richargv.html" class="tsd-signature-type">RichArgv</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="createrichcommand" class="tsd-anchor"></a>
+					<h3>create<wbr>Rich<wbr>Command</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Rich<wbr>Command<span class="tsd-signature-symbol">(</span>command<span class="tsd-signature-symbol">: </span><a href="interfaces/command.html" class="tsd-signature-type">Command</a>, options<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/flagobjectoptions.html" class="tsd-signature-type">FlagObjectOptions</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="interfaces/richcommand.html" class="tsd-signature-type">RichCommand</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/4erem6a/RichCommands/blob/cd65fa3/src/utils/createRichCommand.ts#L8">utils/createRichCommand.ts:8</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Creates a <a href="interfaces/richcommand.html">RichCommand</a> from a <a href="interfaces/command.html">Command</a>.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>command: <a href="interfaces/command.html" class="tsd-signature-type">Command</a></h5>
+								</li>
+								<li>
+									<h5>options: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/flagobjectoptions.html" class="tsd-signature-type">FlagObjectOptions</a><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="interfaces/richcommand.html" class="tsd-signature-type">RichCommand</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -299,7 +345,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/4erem6a/RichCommands/blob/916eca3/src/types/isArgument.ts#L7">types/isArgument.ts:7</a></li>
+									<li>Defined in <a href="https://github.com/4erem6a/RichCommands/blob/cd65fa3/src/types/isArgument.ts#L7">types/isArgument.ts:7</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -330,7 +376,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/4erem6a/RichCommands/blob/916eca3/src/types/isFlag.ts#L7">types/isFlag.ts:7</a></li>
+									<li>Defined in <a href="https://github.com/4erem6a/RichCommands/blob/cd65fa3/src/types/isFlag.ts#L7">types/isFlag.ts:7</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -352,16 +398,16 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function">
-					<a name="parse" class="tsd-anchor"></a>
-					<h3>parse</h3>
+					<a name="parseargs" class="tsd-anchor"></a>
+					<h3>parse<wbr>Args</h3>
 					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">parse<span class="tsd-signature-symbol">(</span>source<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><a href="interfaces/richparseroptions.html" class="tsd-signature-type">RichParserOptions</a><span class="tsd-signature-symbol"> &amp; </span><a href="interfaces/flagobjectoptions.html" class="tsd-signature-type">FlagObjectOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="interfaces/richargv.html" class="tsd-signature-type">RichArgv</a></li>
+						<li class="tsd-signature tsd-kind-icon">parse<wbr>Args<span class="tsd-signature-symbol">(</span>source<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><a href="globals.html#parseoptions" class="tsd-signature-type">ParseOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="interfaces/richargv.html" class="tsd-signature-type">RichArgv</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/4erem6a/RichCommands/blob/916eca3/src/parse.ts#L17">parse.ts:17</a></li>
+									<li>Defined in <a href="https://github.com/4erem6a/RichCommands/blob/cd65fa3/src/parse.ts#L18">parse.ts:18</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -378,15 +424,58 @@
 									</div>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> options: <a href="interfaces/richparseroptions.html" class="tsd-signature-type">RichParserOptions</a><span class="tsd-signature-symbol"> &amp; </span><a href="interfaces/flagobjectoptions.html" class="tsd-signature-type">FlagObjectOptions</a><span class="tsd-signature-symbol"> =&nbsp;{}</span></h5>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> options: <a href="globals.html#parseoptions" class="tsd-signature-type">ParseOptions</a><span class="tsd-signature-symbol"> =&nbsp;{}</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>Parsing and processing options.
-											Parsing options override the <a href="globals.html#defaultrichparseroptions">default ones</a>,
+											Parsing options override the {@link defaultRichParserOptions default ones},
 										if you want to disable a parsing option then you should explicitly set it to undefined.</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="interfaces/richargv.html" class="tsd-signature-type">RichArgv</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="parsecommand" class="tsd-anchor"></a>
+					<h3>parse<wbr>Command</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">parse<wbr>Command<span class="tsd-signature-symbol">(</span>source<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><a href="globals.html#parseoptions" class="tsd-signature-type">ParseOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="interfaces/richcommand.html" class="tsd-signature-type">RichCommand</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/4erem6a/RichCommands/blob/cd65fa3/src/parse.ts#L40">parse.ts:40</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Tries to parse the source string to a <a href="interfaces/richcommand.html">RichCommand</a>.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>source: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The source string.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> options: <a href="globals.html#parseoptions" class="tsd-signature-type">ParseOptions</a><span class="tsd-signature-symbol"> =&nbsp;{}</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Parsing and processing options.
+											Parsing options override the {@link defaultRichParserOptions default ones},
+										if you want to disable a parsing option then you should explicitly set it to undefined.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="interfaces/richcommand.html" class="tsd-signature-type">RichCommand</a>
+								<span class="tsd-signature-symbol"> | </span>
+								<span class="tsd-signature-type">null</span>
+							</h4>
+							<p>A rich command if command was parsed successfully, null otherwise.</p>
 						</li>
 					</ul>
 				</section>
@@ -399,7 +488,7 @@
 					<div class="tsd-signature tsd-kind-icon">default<wbr>Flag<wbr>Object<wbr>Options<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/4erem6a/RichCommands/blob/916eca3/src/constants.ts#L20">constants.ts:20</a></li>
+							<li>Defined in <a href="https://github.com/4erem6a/RichCommands/blob/cd65fa3/src/constants.ts#L20">constants.ts:20</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -413,18 +502,28 @@
 						<div class="tsd-signature tsd-kind-icon">allow<wbr>Array<wbr>Values<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/4erem6a/RichCommands/blob/916eca3/src/constants.ts#L21">constants.ts:21</a></li>
+								<li>Defined in <a href="https://github.com/4erem6a/RichCommands/blob/cd65fa3/src/constants.ts#L21">constants.ts:21</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="defaultflagobjectoptions.caseinsensitiveflags" class="tsd-anchor"></a>
+						<h3>case<wbr>Insensitive<wbr>Flags</h3>
+						<div class="tsd-signature tsd-kind-icon">case<wbr>Insensitive<wbr>Flags<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> =&nbsp;false</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/4erem6a/RichCommands/blob/cd65fa3/src/constants.ts#L22">constants.ts:22</a></li>
 							</ul>
 						</aside>
 					</section>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-object-literal">
-					<a name="defaultrichparseroptions" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> default<wbr>Rich<wbr>Parser<wbr>Options</h3>
-					<div class="tsd-signature tsd-kind-icon">default<wbr>Rich<wbr>Parser<wbr>Options<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<a name="defaultparseroptions" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> default<wbr>Parser<wbr>Options</h3>
+					<div class="tsd-signature tsd-kind-icon">default<wbr>Parser<wbr>Options<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/4erem6a/RichCommands/blob/916eca3/src/constants.ts#L7">constants.ts:7</a></li>
+							<li>Defined in <a href="https://github.com/4erem6a/RichCommands/blob/cd65fa3/src/constants.ts#L7">constants.ts:7</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -433,72 +532,72 @@
 						</div>
 					</div>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
-						<a name="defaultrichparseroptions.emptyargmarkers" class="tsd-anchor"></a>
+						<a name="defaultparseroptions.emptyargmarkers" class="tsd-anchor"></a>
 						<h3>empty<wbr>Arg<wbr>Markers</h3>
 						<div class="tsd-signature tsd-kind-icon">empty<wbr>Arg<wbr>Markers<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[&quot;~&quot;]</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/4erem6a/RichCommands/blob/916eca3/src/constants.ts#L11">constants.ts:11</a></li>
+								<li>Defined in <a href="https://github.com/4erem6a/RichCommands/blob/cd65fa3/src/constants.ts#L11">constants.ts:11</a></li>
 							</ul>
 						</aside>
 					</section>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
-						<a name="defaultrichparseroptions.escapemarkers" class="tsd-anchor"></a>
+						<a name="defaultparseroptions.escapemarkers" class="tsd-anchor"></a>
 						<h3>escape<wbr>Markers</h3>
 						<div class="tsd-signature tsd-kind-icon">escape<wbr>Markers<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[&quot;\\&quot;]</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/4erem6a/RichCommands/blob/916eca3/src/constants.ts#L12">constants.ts:12</a></li>
+								<li>Defined in <a href="https://github.com/4erem6a/RichCommands/blob/cd65fa3/src/constants.ts#L12">constants.ts:12</a></li>
 							</ul>
 						</aside>
 					</section>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
-						<a name="defaultrichparseroptions.flagmarkers" class="tsd-anchor"></a>
+						<a name="defaultparseroptions.flagmarkers" class="tsd-anchor"></a>
 						<h3>flag<wbr>Markers</h3>
 						<div class="tsd-signature tsd-kind-icon">flag<wbr>Markers<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[&quot;--&quot;, &quot;-&quot;]</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/4erem6a/RichCommands/blob/916eca3/src/constants.ts#L9">constants.ts:9</a></li>
+								<li>Defined in <a href="https://github.com/4erem6a/RichCommands/blob/cd65fa3/src/constants.ts#L9">constants.ts:9</a></li>
 							</ul>
 						</aside>
 					</section>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
-						<a name="defaultrichparseroptions.flagvaluemarkers" class="tsd-anchor"></a>
+						<a name="defaultparseroptions.flagvaluemarkers" class="tsd-anchor"></a>
 						<h3>flag<wbr>Value<wbr>Markers</h3>
 						<div class="tsd-signature tsd-kind-icon">flag<wbr>Value<wbr>Markers<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[&quot;&#x3D;&quot;]</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/4erem6a/RichCommands/blob/916eca3/src/constants.ts#L10">constants.ts:10</a></li>
+								<li>Defined in <a href="https://github.com/4erem6a/RichCommands/blob/cd65fa3/src/constants.ts#L10">constants.ts:10</a></li>
 							</ul>
 						</aside>
 					</section>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
-						<a name="defaultrichparseroptions.quotes" class="tsd-anchor"></a>
+						<a name="defaultparseroptions.quotes" class="tsd-anchor"></a>
 						<h3>quotes</h3>
 						<div class="tsd-signature tsd-kind-icon">quotes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[&#x27;&quot;&#x27;, [&quot;(&quot;, &quot;)&quot;]]</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/4erem6a/RichCommands/blob/916eca3/src/constants.ts#L8">constants.ts:8</a></li>
+								<li>Defined in <a href="https://github.com/4erem6a/RichCommands/blob/cd65fa3/src/constants.ts#L8">constants.ts:8</a></li>
 							</ul>
 						</aside>
 					</section>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
-						<a name="defaultrichparseroptions.restmarkers" class="tsd-anchor"></a>
+						<a name="defaultparseroptions.restmarkers" class="tsd-anchor"></a>
 						<h3>rest<wbr>Markers</h3>
 						<div class="tsd-signature tsd-kind-icon">rest<wbr>Markers<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[&quot;::&quot;]</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/4erem6a/RichCommands/blob/916eca3/src/constants.ts#L14">constants.ts:14</a></li>
+								<li>Defined in <a href="https://github.com/4erem6a/RichCommands/blob/cd65fa3/src/constants.ts#L14">constants.ts:14</a></li>
 							</ul>
 						</aside>
 					</section>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
-						<a name="defaultrichparseroptions.separators" class="tsd-anchor"></a>
+						<a name="defaultparseroptions.separators" class="tsd-anchor"></a>
 						<h3>separators</h3>
 						<div class="tsd-signature tsd-kind-icon">separators<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[&quot; &quot;, &quot;\n&quot;, &quot;\r&quot;, &quot;\t&quot;]</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/4erem6a/RichCommands/blob/916eca3/src/constants.ts#L13">constants.ts:13</a></li>
+								<li>Defined in <a href="https://github.com/4erem6a/RichCommands/blob/cd65fa3/src/constants.ts#L13">constants.ts:13</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -516,7 +615,10 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-class">
-						<a href="classes/richparser.html" class="tsd-kind-icon">Rich<wbr>Parser</a>
+						<a href="classes/parser.html" class="tsd-kind-icon">Parser</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/command.html" class="tsd-kind-icon">Command</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/commandflag.html" class="tsd-kind-icon">Command<wbr>Flag</a>
@@ -525,10 +627,13 @@
 						<a href="interfaces/flagobjectoptions.html" class="tsd-kind-icon">Flag<wbr>Object<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/parseroptions.html" class="tsd-kind-icon">Parser<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/richargv.html" class="tsd-kind-icon">Rich<wbr>Argv</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/richparseroptions.html" class="tsd-kind-icon">Rich<wbr>Parser<wbr>Options</a>
+						<a href="interfaces/richcommand.html" class="tsd-kind-icon">Rich<wbr>Command</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#commandargument" class="tsd-kind-icon">Command<wbr>Argument</a>
@@ -545,14 +650,20 @@
 					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#emptyargument" class="tsd-kind-icon">Empty<wbr>Argument</a>
 					</li>
+					<li class=" tsd-kind-type-alias tsd-is-not-exported">
+						<a href="globals.html#parseoptions" class="tsd-kind-icon">Parse<wbr>Options</a>
+					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#stringargument" class="tsd-kind-icon">String<wbr>Argument</a>
 					</li>
 					<li class=" tsd-kind-function">
-						<a href="globals.html#buildflagobject" class="tsd-kind-icon">build<wbr>Flag<wbr>Object</a>
+						<a href="globals.html#createflagobject" class="tsd-kind-icon">create<wbr>Flag<wbr>Object</a>
 					</li>
 					<li class=" tsd-kind-function">
-						<a href="globals.html#buildrichargv" class="tsd-kind-icon">build<wbr>Rich<wbr>Argv</a>
+						<a href="globals.html#createrichargv" class="tsd-kind-icon">create<wbr>Rich<wbr>Argv</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#createrichcommand" class="tsd-kind-icon">create<wbr>Rich<wbr>Command</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#isargument" class="tsd-kind-icon">is<wbr>Argument</a>
@@ -561,13 +672,16 @@
 						<a href="globals.html#isflag" class="tsd-kind-icon">is<wbr>Flag</a>
 					</li>
 					<li class=" tsd-kind-function">
-						<a href="globals.html#parse" class="tsd-kind-icon">parse</a>
+						<a href="globals.html#parseargs" class="tsd-kind-icon">parse<wbr>Args</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#parsecommand" class="tsd-kind-icon">parse<wbr>Command</a>
 					</li>
 					<li class=" tsd-kind-object-literal">
 						<a href="globals.html#defaultflagobjectoptions" class="tsd-kind-icon">default<wbr>Flag<wbr>Object<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-object-literal">
-						<a href="globals.html#defaultrichparseroptions" class="tsd-kind-icon">default<wbr>Rich<wbr>Parser<wbr>Options</a>
+						<a href="globals.html#defaultparseroptions" class="tsd-kind-icon">default<wbr>Parser<wbr>Options</a>
 					</li>
 				</ul>
 			</nav>

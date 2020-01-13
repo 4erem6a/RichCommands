@@ -89,6 +89,7 @@
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="flagobjectoptions.html#allowarrayvalues" class="tsd-kind-icon">allow<wbr>Array<wbr>Values</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="flagobjectoptions.html#caseinsensitiveflags" class="tsd-kind-icon">case<wbr>Insensitive<wbr>Flags</a></li>
 							</ul>
 						</section>
 					</div>
@@ -98,17 +99,32 @@
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="allowarrayvalues" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> allow<wbr>Array<wbr>Values</h3>
-					<div class="tsd-signature tsd-kind-icon">allow<wbr>Array<wbr>Values<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></div>
+					<h3>allow<wbr>Array<wbr>Values</h3>
+					<div class="tsd-signature tsd-kind-icon">allow<wbr>Array<wbr>Values<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/4erem6a/RichCommands/blob/916eca3/src/buildFlagObject.ts#L21">buildFlagObject.ts:21</a></li>
+							<li>Defined in <a href="https://github.com/4erem6a/RichCommands/blob/cd65fa3/src/utils/createFlagObject.ts#L21">utils/createFlagObject.ts:21</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>If true, multiple flags with the same name will be merged into an array flag with all the values.
 							Otherwise, only the first flag with that name will be used.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="caseinsensitiveflags" class="tsd-anchor"></a>
+					<h3>case<wbr>Insensitive<wbr>Flags</h3>
+					<div class="tsd-signature tsd-kind-icon">case<wbr>Insensitive<wbr>Flags<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/4erem6a/RichCommands/blob/cd65fa3/src/utils/createFlagObject.ts#L26">utils/createFlagObject.ts:26</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Whether flags names are case insensitive.</p>
 						</div>
 					</div>
 				</section>
@@ -125,7 +141,10 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-class">
-						<a href="../classes/richparser.html" class="tsd-kind-icon">Rich<wbr>Parser</a>
+						<a href="../classes/parser.html" class="tsd-kind-icon">Parser</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="command.html" class="tsd-kind-icon">Command</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="commandflag.html" class="tsd-kind-icon">Command<wbr>Flag</a>
@@ -138,15 +157,21 @@
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="flagobjectoptions.html#allowarrayvalues" class="tsd-kind-icon">allow<wbr>Array<wbr>Values</a>
 							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="flagobjectoptions.html#caseinsensitiveflags" class="tsd-kind-icon">case<wbr>Insensitive<wbr>Flags</a>
+							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
 					<li class=" tsd-kind-interface">
+						<a href="parseroptions.html" class="tsd-kind-icon">Parser<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="richargv.html" class="tsd-kind-icon">Rich<wbr>Argv</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="richparseroptions.html" class="tsd-kind-icon">Rich<wbr>Parser<wbr>Options</a>
+						<a href="richcommand.html" class="tsd-kind-icon">Rich<wbr>Command</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="../globals.html#commandargument" class="tsd-kind-icon">Command<wbr>Argument</a>
@@ -163,14 +188,20 @@
 					<li class=" tsd-kind-type-alias">
 						<a href="../globals.html#emptyargument" class="tsd-kind-icon">Empty<wbr>Argument</a>
 					</li>
+					<li class=" tsd-kind-type-alias tsd-is-not-exported">
+						<a href="../globals.html#parseoptions" class="tsd-kind-icon">Parse<wbr>Options</a>
+					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="../globals.html#stringargument" class="tsd-kind-icon">String<wbr>Argument</a>
 					</li>
 					<li class=" tsd-kind-function">
-						<a href="../globals.html#buildflagobject" class="tsd-kind-icon">build<wbr>Flag<wbr>Object</a>
+						<a href="../globals.html#createflagobject" class="tsd-kind-icon">create<wbr>Flag<wbr>Object</a>
 					</li>
 					<li class=" tsd-kind-function">
-						<a href="../globals.html#buildrichargv" class="tsd-kind-icon">build<wbr>Rich<wbr>Argv</a>
+						<a href="../globals.html#createrichargv" class="tsd-kind-icon">create<wbr>Rich<wbr>Argv</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="../globals.html#createrichcommand" class="tsd-kind-icon">create<wbr>Rich<wbr>Command</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="../globals.html#isargument" class="tsd-kind-icon">is<wbr>Argument</a>
@@ -179,13 +210,16 @@
 						<a href="../globals.html#isflag" class="tsd-kind-icon">is<wbr>Flag</a>
 					</li>
 					<li class=" tsd-kind-function">
-						<a href="../globals.html#parse" class="tsd-kind-icon">parse</a>
+						<a href="../globals.html#parseargs" class="tsd-kind-icon">parse<wbr>Args</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="../globals.html#parsecommand" class="tsd-kind-icon">parse<wbr>Command</a>
 					</li>
 					<li class=" tsd-kind-object-literal">
 						<a href="../globals.html#defaultflagobjectoptions" class="tsd-kind-icon">default<wbr>Flag<wbr>Object<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-object-literal">
-						<a href="../globals.html#defaultrichparseroptions" class="tsd-kind-icon">default<wbr>Rich<wbr>Parser<wbr>Options</a>
+						<a href="../globals.html#defaultparseroptions" class="tsd-kind-icon">default<wbr>Parser<wbr>Options</a>
 					</li>
 				</ul>
 			</nav>

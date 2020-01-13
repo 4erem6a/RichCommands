@@ -67,7 +67,7 @@
 				<a href="#richcommands" id="richcommands" style="color: inherit; text-decoration: none;">
 					<h1>RichCommands</h1>
 				</a>
-				<p>RichCommands is a simple, feature-rich and error-free command parser.</p>
+				<p>RichCommands is a simple, feature-rich and error-free command/argument parser.</p>
 				<p><a href="https://www.npmjs.com/package/rich-commands"><img src="https://badge.fury.io/js/rich-commands.svg" alt="npm version"></a></p>
 				<p><a href="https://4erem6a.github.io/RichCommands/">Documentation</a></p>
 				<a href="#features" id="features" style="color: inherit; text-decoration: none;">
@@ -86,19 +86,41 @@
 				<a href="#example" id="example" style="color: inherit; text-decoration: none;">
 					<h2>Example</h2>
 				</a>
-				<pre><code class="language-js"><span class="hljs-keyword">const</span> { parse } = <span class="hljs-built_in">require</span>(<span class="hljs-string">"rich-commands"</span>);
+				<a href="#command-parsing" id="command-parsing" style="color: inherit; text-decoration: none;">
+					<h3>Command parsing</h3>
+				</a>
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> { parseCommand } = <span class="hljs-built_in">require</span>(<span class="hljs-string">"rich-commands"</span>);
 
-<span class="hljs-keyword">const</span> command = <span class="hljs-string">'this -is=a "sample command"'</span>;
+<span class="hljs-keyword">const</span> rawCommand = <span class="hljs-string">"npm i -D typescript"</span>;
 
-<span class="hljs-keyword">const</span> result = parse(command);
+<span class="hljs-keyword">const</span> command = parseCommand(rawCommand);
 
-<span class="hljs-built_in">console</span>.log(result);</code></pre>
+<span class="hljs-built_in">console</span>.log(command);</code></pre>
 				<p>Expected result:</p>
-				<pre><code class="language-js">{ <span class="hljs-attr">args</span>: [ <span class="hljs-string">'this'</span>, <span class="hljs-string">'sample command'</span> ], <span class="hljs-attr">flags</span>: { <span class="hljs-attr">is</span>: <span class="hljs-string">'a'</span> } }</code></pre>
+				<pre><code class="language-js">{
+  <span class="hljs-attr">name</span>: <span class="hljs-string">"npm"</span>,
+  <span class="hljs-attr">args</span>: [<span class="hljs-string">"i"</span>, <span class="hljs-string">"typescript"</span>],
+  <span class="hljs-attr">flags</span>: { <span class="hljs-attr">D</span>: <span class="hljs-literal">true</span> }
+}</code></pre>
+				<a href="#argument-parsing" id="argument-parsing" style="color: inherit; text-decoration: none;">
+					<h3>Argument parsing</h3>
+				</a>
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> { parseArgs } = <span class="hljs-built_in">require</span>(<span class="hljs-string">"rich-commands"</span>);
+
+<span class="hljs-keyword">const</span> rawArgs = <span class="hljs-string">'1 "2 3" -f = x'</span>;
+
+<span class="hljs-keyword">const</span> argv = parseArgs(rawArgs);
+
+<span class="hljs-built_in">console</span>.log(argv);</code></pre>
+				<p>Expected result:</p>
+				<pre><code class="language-js">{
+  <span class="hljs-attr">args</span>: [<span class="hljs-string">"1"</span>, <span class="hljs-string">"2 3"</span>],
+  <span class="hljs-attr">flags</span>: { <span class="hljs-attr">f</span>: <span class="hljs-string">"x"</span> }
+}</code></pre>
 				<a href="#grammar" id="grammar" style="color: inherit; text-decoration: none;">
 					<h2>Grammar</h2>
 				</a>
-				<pre><code><span class="hljs-keyword">command</span>     -&gt; commandPart*
+				<pre><code><span class="hljs-keyword">command</span>     -&gt; <span class="hljs-built_in">string</span> commandPart*
 commandPart -&gt; <span class="hljs-keyword">argument</span> | flag
 
 <span class="hljs-keyword">argument</span>    -&gt; <span class="hljs-built_in">string</span> | <span class="hljs-built_in">empty</span>
@@ -109,6 +131,7 @@ flag        -&gt; <span class="hljs-symbol">&lt;FlagMarker&gt;</span> <span clas
 rest        -&gt; <span class="hljs-symbol">&lt;RestMarker&gt;</span> <span class="hljs-symbol">&lt;any&gt;</span>*
 quoted      -&gt; <span class="hljs-symbol">&lt;OpeningQuote&gt;</span> (<span class="hljs-symbol">&lt;any&gt;</span> - <span class="hljs-symbol">&lt;ClosingQuote&gt;</span>)* <span class="hljs-symbol">&lt;ClosingQuote&gt;</span>
 simple      -&gt; (<span class="hljs-symbol">&lt;any&gt;</span> - <span class="hljs-symbol">&lt;Separators&gt;</span> - <span class="hljs-symbol">&lt;OpeningQuotes&gt;</span>)+
+
 <span class="hljs-built_in">empty</span>       -&gt; <span class="hljs-symbol">&lt;EmptyArgMarker&gt;</span></code></pre>
 			</div>
 		</div>
@@ -123,7 +146,10 @@ simple      -&gt; (<span class="hljs-symbol">&lt;any&gt;</span> - <span class="h
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-class">
-						<a href="classes/richparser.html" class="tsd-kind-icon">Rich<wbr>Parser</a>
+						<a href="classes/parser.html" class="tsd-kind-icon">Parser</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/command.html" class="tsd-kind-icon">Command</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/commandflag.html" class="tsd-kind-icon">Command<wbr>Flag</a>
@@ -132,10 +158,13 @@ simple      -&gt; (<span class="hljs-symbol">&lt;any&gt;</span> - <span class="h
 						<a href="interfaces/flagobjectoptions.html" class="tsd-kind-icon">Flag<wbr>Object<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/parseroptions.html" class="tsd-kind-icon">Parser<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/richargv.html" class="tsd-kind-icon">Rich<wbr>Argv</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/richparseroptions.html" class="tsd-kind-icon">Rich<wbr>Parser<wbr>Options</a>
+						<a href="interfaces/richcommand.html" class="tsd-kind-icon">Rich<wbr>Command</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#commandargument" class="tsd-kind-icon">Command<wbr>Argument</a>
@@ -152,14 +181,20 @@ simple      -&gt; (<span class="hljs-symbol">&lt;any&gt;</span> - <span class="h
 					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#emptyargument" class="tsd-kind-icon">Empty<wbr>Argument</a>
 					</li>
+					<li class=" tsd-kind-type-alias tsd-is-not-exported">
+						<a href="globals.html#parseoptions" class="tsd-kind-icon">Parse<wbr>Options</a>
+					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#stringargument" class="tsd-kind-icon">String<wbr>Argument</a>
 					</li>
 					<li class=" tsd-kind-function">
-						<a href="globals.html#buildflagobject" class="tsd-kind-icon">build<wbr>Flag<wbr>Object</a>
+						<a href="globals.html#createflagobject" class="tsd-kind-icon">create<wbr>Flag<wbr>Object</a>
 					</li>
 					<li class=" tsd-kind-function">
-						<a href="globals.html#buildrichargv" class="tsd-kind-icon">build<wbr>Rich<wbr>Argv</a>
+						<a href="globals.html#createrichargv" class="tsd-kind-icon">create<wbr>Rich<wbr>Argv</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#createrichcommand" class="tsd-kind-icon">create<wbr>Rich<wbr>Command</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#isargument" class="tsd-kind-icon">is<wbr>Argument</a>
@@ -168,13 +203,16 @@ simple      -&gt; (<span class="hljs-symbol">&lt;any&gt;</span> - <span class="h
 						<a href="globals.html#isflag" class="tsd-kind-icon">is<wbr>Flag</a>
 					</li>
 					<li class=" tsd-kind-function">
-						<a href="globals.html#parse" class="tsd-kind-icon">parse</a>
+						<a href="globals.html#parseargs" class="tsd-kind-icon">parse<wbr>Args</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#parsecommand" class="tsd-kind-icon">parse<wbr>Command</a>
 					</li>
 					<li class=" tsd-kind-object-literal">
 						<a href="globals.html#defaultflagobjectoptions" class="tsd-kind-icon">default<wbr>Flag<wbr>Object<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-object-literal">
-						<a href="globals.html#defaultrichparseroptions" class="tsd-kind-icon">default<wbr>Rich<wbr>Parser<wbr>Options</a>
+						<a href="globals.html#defaultparseroptions" class="tsd-kind-icon">default<wbr>Parser<wbr>Options</a>
 					</li>
 				</ul>
 			</nav>
