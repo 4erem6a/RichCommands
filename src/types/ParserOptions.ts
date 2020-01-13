@@ -1,7 +1,7 @@
 /**
  * Options describing the command syntax for the {@link RichParser}.
  */
-export interface RichParserOptions {
+export interface ParserOptions {
   /**
    * Quoted argument markers.
    * A quote may be single ( " ) or paired ( {, } ).
