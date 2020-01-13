@@ -148,10 +148,10 @@ export class Parser {
     const valueMarkers = this.options.flagValueMarkers ?? [];
 
     const value = this.source.match(valueMarkers)
-      ? (this.skipSeparators(), this.argument()) ?? true
+      ? (this.skipSeparators(), this.argument())
       : true;
 
-    return { name, value };
+    return { name, value: value === null ? true : value };
   }
 
   /**

@@ -44,7 +44,7 @@ export function createFlagObject(
   const flagNameFilter = (name: string) => (flag: CommandFlag) =>
     flag.name.localeCompare(name, undefined, {
       sensitivity: options.caseInsensitiveFlags ? "accent" : "variant"
-    });
+    }) == 0;
 
   const entries = keys.map(key => ({
     [key]: allowArrayValues
