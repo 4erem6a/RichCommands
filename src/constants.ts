@@ -1,5 +1,5 @@
-import { RichParserOptions } from "./RichParserOptions";
-import { FlagObjectOptions } from "./buildFlagObject";
+import { RichParserOptions } from "./types/RichParserOptions";
+import { FlagObjectOptions } from "./utils/createFlagObject";
 
 /**
  * Default rich parser options.
@@ -18,5 +18,6 @@ export const defaultRichParserOptions: RichParserOptions = {
  * Default flag object options.
  */
 export const defaultFlagObjectOptions: FlagObjectOptions = {
-  allowArrayValues: true
+  allowArrayValues: true,
+  caseInsensitiveFlags: false
 };
