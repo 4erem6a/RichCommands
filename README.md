@@ -19,20 +19,47 @@ RichCommands is a simple, feature-rich and error-free command parser.
 
 ## Example
 
+### Command parsing
+
 ```js
-const { parse } = require("rich-commands");
+const { parseCommand } = require("rich-commands");
 
-const command = 'this -is=a "sample command"';
+const rawCommand = "npm i -D typescript";
 
-const result = parse(command);
+const command = parseCommand(rawCommand);
 
-console.log(result);
+console.log(command);
 ```
 
 Expected result:
 
 ```js
-{ args: [ 'this', 'sample command' ], flags: { is: 'a' } }
+{
+  name: "npm",
+  args: ["i", "typescript"],
+  flags: { D: true }
+}
+```
+
+### Argument parsing
+
+```js
+const { parseArgs } = require("rich-commands");
+
+const rawArgs = '1 "2 3" -f = x';
+
+const argv = parseArgs(rawArgs);
+
+console.log(argv);
+```
+
+Expected result:
+
+```js
+{
+  args: ["1", "2 3"],
+  flags: { f: "x" }
+}
 ```
 
 ## Grammar
