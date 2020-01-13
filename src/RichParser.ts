@@ -1,5 +1,5 @@
 import { InputStream } from "@4erem6a/inputstream";
-import { RichParserOptions } from "./RichParserOptions";
+import { RichParserOptions } from "./types/RichParserOptions";
 import {
   CommandPart,
   CommandFlag,
