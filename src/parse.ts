@@ -1,10 +1,8 @@
 import { RichParserOptions } from "./types/RichParserOptions";
-import { FlagObjectOptions, createFlagObject } from "./utils/createFlagObject";
+import { FlagObjectOptions } from "./utils/createFlagObject";
 import { defaultRichParserOptions } from "./constants";
 import { RichArgv, RichCommand } from "./types/types";
 import { RichParser } from "./RichParser";
-import { isArgument } from "./types/isArgument";
-import { isFlag } from "./types/isFlag";
 import { createRichArgv } from "./utils/createRichArgv";
 import { createRichCommand } from "./utils/createRichCommand";
 
