@@ -1,10 +1,10 @@
-import { RichParserOptions } from "./types/RichParserOptions";
+import { ParserOptions } from "./types/ParserOptions";
 import { FlagObjectOptions } from "./utils/createFlagObject";
 
 /**
  * Default rich parser options.
  */
-export const defaultRichParserOptions: RichParserOptions = {
+export const defaultParserOptions: ParserOptions = {
   quotes: ['"', ["(", ")"]],
   flagMarkers: ["--", "-"],
   flagValueMarkers: ["="],
