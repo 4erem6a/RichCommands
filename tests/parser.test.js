@@ -1,10 +1,10 @@
-const { parse } = require("../");
+const { parseCommand, parseArgs } = require("../");
 
 describe("Parser tests", () => {
   test("Parse Simple", () => {
     const source = `1 2 3 4`;
 
-    const { args: result } = parse(source);
+    const { args: result } = parseArgs(source);
 
     expect(result).toEqual(["1", "2", "3", "4"]);
   });
@@ -12,7 +12,7 @@ describe("Parser tests", () => {
   test("Parse Quoted", () => {
     const source = `1 2 (3 4) (5 6`;
 
-    const { args: result } = parse(source);
+    const { args: result } = parseArgs(source);
 
     expect(result).toEqual(["1", "2", "3 4", "5 6"]);
   });
@@ -20,7 +20,7 @@ describe("Parser tests", () => {
   test("Long Quotes", () => {
     const source = `1 2 begin3 4end begin5 6`;
 
-    const { args: result } = parse(source, {
+    const { args: result } = parseArgs(source, {
       quotes: [["begin", "end"]]
     });
 
@@ -30,7 +30,7 @@ describe("Parser tests", () => {
   test("Escape Quoted", () => {
     const source = `1 (((2 \\\\3\\) \\\\4\\))`;
 
-    const { args: result } = parse(source);
+    const { args: result } = parseArgs(source);
 
     expect(result).toEqual(["1", "((2 \\3) \\4)"]);
   });
@@ -38,7 +38,7 @@ describe("Parser tests", () => {
   test("Long Escape", () => {
     const source = `1 beginbegin1 2 :long-escape::long-escape:3:long-escape:end 4end`;
 
-    const { args: result } = parse(source, {
+    const { args: result } = parseArgs(source, {
       escapeMarkers: [":long-escape:"],
       quotes: [["begin", "end"]]
     });
@@ -49,7 +49,7 @@ describe("Parser tests", () => {
   test("Parse Empty", () => {
     const source = `1 2 ~ 3 ~ 4`;
 
-    const { args: result } = parse(source);
+    const { args: result } = parseArgs(source);
 
     expect(result).toEqual(["1", "2", undefined, "3", undefined, "4"]);
   });
@@ -57,7 +57,7 @@ describe("Parser tests", () => {
   test("Parse Flags", () => {
     const source = `-f --ff=1 - (flag name) = (flag value) -  x    = 2   --    y =   "3"`;
 
-    const { flags: result } = parse(source);
+    const { flags: result } = parseArgs(source);
 
     expect(result).toEqual({
       f: true,
@@ -71,7 +71,7 @@ describe("Parser tests", () => {
   test("Parse Array Flag", () => {
     const source = `-f = 1 -f = 2 -f = 3`;
 
-    const { flags: result } = parse(source);
+    const { flags: result } = parseArgs(source);
 
     expect(result).toEqual({
       f: ["1", "2", "3"]
@@ -81,7 +81,7 @@ describe("Parser tests", () => {
   test("Parse Complex", () => {
     const source = `--test -x = 3 sample -f = 1 ~ (complex command) -f = 2 --with = (complex flags) --f ~ and -empty-one=~`;
 
-    const result = parse(source);
+    const result = parseArgs(source);
 
     expect(result).toEqual({
       args: ["sample", undefined, "complex command", undefined, "and"],
@@ -98,7 +98,7 @@ describe("Parser tests", () => {
   test("Parse Blank", () => {
     const source = `    `;
 
-    const result = parse(source);
+    const result = parseArgs(source);
 
     expect(result).toEqual({ args: [], flags: {} });
   });
@@ -106,7 +106,7 @@ describe("Parser tests", () => {
   test("Parse Rest", () => {
     const source = `arg1 arg2 -f = x ::arg2 arg3 :: -y = z`;
 
-    const result = parse(source);
+    const result = parseArgs(source);
 
     expect(result).toEqual({
       args: ["arg1", "arg2", "arg2 arg3 :: -y = z"],
