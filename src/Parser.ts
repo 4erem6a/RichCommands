@@ -31,6 +31,7 @@ export class Parser {
   /**
    * The parsing mode stack.
    */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   private modeStack: any[] = [];
 
   /**
@@ -54,6 +55,7 @@ export class Parser {
   /**
    * The current parsing mode.
    */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   private get mode(): any {
     return this.modeStack[this.modeStack.length - 1];
   }
