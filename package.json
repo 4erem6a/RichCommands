@@ -8,8 +8,9 @@
     "buildRelease": "./node_modules/.bin/tsc",
     "buildDebug": "./node_modules/.bin/tsc --inlineSourceMap",
     "docs": "./node_modules/.bin/typedoc --mode file --out docs src",
+    "lint": "./node_modules/.bin/eslint src/**",
     "test": "./node_modules/.bin/jest",
-    "prepublishOnly": "yarn buildRelease && yarn test"
+    "prepublishOnly": "yarn lint && yarn buildRelease && yarn test"
   },
   "jest": {
     "testEnvironment": "node"
