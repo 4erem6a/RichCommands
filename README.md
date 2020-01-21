@@ -79,3 +79,17 @@ simple      -> (<any> - <Separators> - <OpeningQuotes>)+
 
 empty       -> <EmptyArgMarker>
 ```
+
+## Default syntax
+
+```js
+{
+  quotes: ['"', ["(", ")"]],
+  flagMarkers: ["--", "-"],
+  flagValueMarkers: ["="],
+  emptyArgMarkers: ["~"],
+  escapeMarkers: ["\\"],
+  separators: [" ", "\n", "\r", "\t"],
+  restMarkers: ["::"]
+}
+```
