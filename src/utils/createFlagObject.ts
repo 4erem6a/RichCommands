@@ -1,4 +1,4 @@
-import { CommandFlag, CommandFlags } from "../types/types";
+import { CommandFlag, CommandFlags, CommandFlagValue } from "../types/types";
 import { defaultFlagObjectOptions } from "../constants";
 
 /**
@@ -8,6 +8,54 @@ import { defaultFlagObjectOptions } from "../constants";
  */
 function getFirstIfOnly<T>(arr: T[]): T | T[] {
   return arr.length == 1 ? arr[0] : arr;
+}
+
+/**
+ * Shorthand for String#localeCompare to perform case insensitive string comparison.
+ * @param str1 The first string to be compared.
+ * @param str2 The second string to be compared.
+ * @ignore
+ */
+function compareStrings(
+  str1: string,
+  str2: string,
+  caseSensitivity: boolean
+): boolean {
+  return (
+    str1.localeCompare(str2, undefined, {
+      sensitivity: caseSensitivity ? "variant" : "accent"
+    }) == 0
+  );
+}
+
+/**
+ * Makes flag object keys case insensitive.
+ * @param flagObject The flag object to make case insensitive.
+ * @ignore
+ */
+function makeCaseInsensitive(flagObject: CommandFlags): CommandFlags {
+  return new Proxy(flagObject, {
+    get(target, key, receiver): CommandFlagValue | CommandFlagValue[] {
+      if (typeof key == "symbol") {
+        return Reflect.get(target, key, receiver);
+      }
+
+      return Object.entries(target).find(([k]) =>
+        compareStrings(k, key.toString(), false)
+      )?.[1];
+    },
+    has(target, key): boolean {
+      if (typeof key == "symbol") {
+        return Reflect.has(target, key);
+      }
+
+      const matchingKey = Object.keys(target).find(k =>
+        compareStrings(k, key.toString(), false)
+      );
+
+      return matchingKey ? Reflect.has(target, matchingKey) : false;
+    }
+  });
 }
 
 /**
@@ -21,7 +69,17 @@ export interface FlagObjectOptions {
   allowArrayValues: boolean;
 
   /**
-   * Whether flags names are case insensitive.
+   * Whether flags names & flag object keys are case insensitive.
+   * @example
+   * const flagObject = createFlagObject([
+   *  { name: 'SampleFlag', value: '1' },
+   *  { name: 'sampleflag', value: '2' }
+   * ], {
+   *  allowArrayValues: true,
+   *  caseInsensitiveFlags: true
+   * });
+   *
+   * const sampleFlag = flagObject.sampleFlag; // [ '1', '2' ]
    */
   caseInsensitiveFlags: boolean;
 }
@@ -37,22 +95,34 @@ export function createFlagObject(
   flags: CommandFlag[],
   options: Partial<FlagObjectOptions> = {}
 ): CommandFlags {
-  const { allowArrayValues } = { ...defaultFlagObjectOptions, ...options };
+  const { allowArrayValues, caseInsensitiveFlags } = {
+    ...defaultFlagObjectOptions,
+    ...options
+  };
 
-  const keys = [...new Set(flags.map(flag => flag.name))];
+  const isUniqueFlagName = (names: string[], name: string): boolean =>
+    !names.some(n => compareStrings(n, name, !caseInsensitiveFlags));
+
+  const names = flags
+    .map(flag => flag.name)
+    .reduce(
+      (names, name) =>
+        isUniqueFlagName(names, name) ? [...names, name] : names,
+      [] as string[]
+    );
 
   const flagNameFilter = (name: string) => (flag: CommandFlag): boolean =>
-    flag.name.localeCompare(name, undefined, {
-      sensitivity: options.caseInsensitiveFlags ? "accent" : "variant"
-    }) == 0;
+    compareStrings(flag.name, name, !caseInsensitiveFlags);
 
-  const entries = keys.map(key => ({
-    [key]: allowArrayValues
+  const entries = names.map(name => ({
+    [name]: allowArrayValues
       ? getFirstIfOnly(
-          flags.filter(flagNameFilter(key)).map(flag => flag.value)
+          flags.filter(flagNameFilter(name)).map(flag => flag.value)
         )
-      : flags.find(flagNameFilter(key))?.value
+      : flags.find(flagNameFilter(name))?.value
   }));
 
-  return entries.reduce((acc, v) => ({ ...acc, ...v }), {});
+  const flagObject = entries.reduce((acc, v) => ({ ...acc, ...v }), {});
+
+  return caseInsensitiveFlags ? makeCaseInsensitive(flagObject) : flagObject;
 }
