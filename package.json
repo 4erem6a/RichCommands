@@ -5,8 +5,9 @@
   "main": "dist/index.js",
   "types": "./types",
   "scripts": {
-    "buildRelease": "./node_modules/.bin/tsc",
-    "buildDebug": "./node_modules/.bin/tsc --inlineSourceMap",
+    "clear": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./scripts/clearDistDirs.ps1",
+    "buildRelease": "yarn clear && ./node_modules/.bin/tsc",
+    "buildDebug": "yarn clear && ./node_modules/.bin/tsc --inlineSourceMap",
     "docs": "./node_modules/.bin/typedoc --mode file --out docs src",
     "lint": "./node_modules/.bin/eslint src/**",
     "test": "./node_modules/.bin/jest",
