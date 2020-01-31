@@ -103,7 +103,7 @@
 					<div class="tsd-signature tsd-kind-icon">allow<wbr>Array<wbr>Values<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/4erem6a/RichCommands/blob/cd65fa3/src/utils/createFlagObject.ts#L21">utils/createFlagObject.ts:21</a></li>
+							<li>Defined in <a href="https://github.com/4erem6a/RichCommands/blob/aff0ed5/src/utils/createFlagObject.ts#L69">utils/createFlagObject.ts:69</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -119,13 +119,25 @@
 					<div class="tsd-signature tsd-kind-icon">case<wbr>Insensitive<wbr>Flags<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/4erem6a/RichCommands/blob/cd65fa3/src/utils/createFlagObject.ts#L26">utils/createFlagObject.ts:26</a></li>
+							<li>Defined in <a href="https://github.com/4erem6a/RichCommands/blob/aff0ed5/src/utils/createFlagObject.ts#L84">utils/createFlagObject.ts:84</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Whether flags names are case insensitive.</p>
+							<p>Whether flags names &amp; flag object keys are case insensitive.</p>
 						</div>
+						<dl class="tsd-comment-tags">
+							<dt>example</dt>
+							<dd><p>const flagObject = createFlagObject([
+									{ name: &#39;SampleFlag&#39;, value: &#39;1&#39; },
+									{ name: &#39;sampleflag&#39;, value: &#39;2&#39; }
+									], {
+									allowArrayValues: true,
+									caseInsensitiveFlags: true
+								});</p>
+								<p>const sampleFlag = flagObject.sampleFlag; // [ &#39;1&#39;, &#39;2&#39; ]</p>
+							</dd>
+						</dl>
 					</div>
 				</section>
 			</section>
