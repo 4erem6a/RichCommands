@@ -7,10 +7,10 @@ $Resolve = { param( [string] $path ) Resolve-Path $path -ErrorAction SilentlyCon
 $dist = &$Resolve "${projectRoot}/dist"
 $types = &$Resolve "${projectRoot}/types" 
 
-if ($null -ne $dist -and (Test-Path $dist)) {
+if ($null -ne $dist) {
   Remove-Item -Recurse $dist
 }
 
-if ($null -ne $types -and (Test-Path $types)) {
+if ($null -ne $types) {
   Remove-Item -Recurse $types
 }
