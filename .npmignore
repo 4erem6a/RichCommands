@@ -3,3 +3,4 @@ docs/
 tests/
 .gitignore
 .tsconfig
+scripts/
