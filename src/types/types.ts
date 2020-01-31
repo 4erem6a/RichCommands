@@ -25,12 +25,12 @@ export interface CommandFlag {
   /**
    * Command flag name.
    */
-  name: string;
+  readonly name: string;
 
   /**
    * Command flag value
    */
-  value: CommandFlagValue;
+  readonly value: CommandFlagValue;
 }
 
 /**
@@ -45,19 +45,19 @@ export interface Command {
   /**
    * Command name.
    */
-  name: string;
+  readonly name: string;
 
   /**
    * Command arguments and flags.
    */
-  parts: CommandPart[];
+  readonly parts: CommandPart[];
 }
 
 /**
  * Object containing command flag values by their names.
  */
 export type CommandFlags = {
-  [name: string]: CommandFlagValue | CommandFlagValue[];
+  readonly [name: string]: CommandFlagValue | CommandFlagValue[];
 };
 
 /**
@@ -67,12 +67,12 @@ export interface RichArgv {
   /**
    * Command arguments.
    */
-  args: Array<string | undefined>;
+  readonly args: Array<string | undefined>;
 
   /**
    * Command flags.
    */
-  flags: CommandFlags;
+  readonly flags: CommandFlags;
 }
 
 /**
@@ -82,5 +82,5 @@ export interface RichCommand extends RichArgv {
   /**
    * Command name.
    */
-  name: string;
+  readonly name: string;
 }
