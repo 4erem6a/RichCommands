@@ -1,6 +1,8 @@
 src/
 docs/
 tests/
+scripts/
 .gitignore
 .tsconfig
-scripts/
+.eslintrc.yml
+.eslintignore
