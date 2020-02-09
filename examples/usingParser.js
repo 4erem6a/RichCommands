@@ -31,7 +31,7 @@ console.log(subcommand); // i
 
 const restParts = parser.commandParts(); // Parse the rest of the command as flags and arguments.
 
-const argv = createRichArgv(restParts);
+const argv = createRichArgv(restParts); // Create RichArgv object from raw command parts.
 
 console.log(argv);
 /* 
