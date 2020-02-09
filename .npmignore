@@ -2,6 +2,7 @@ src/
 docs/
 tests/
 scripts/
+examples/
 .gitignore
 .tsconfig
 .eslintrc.yml
