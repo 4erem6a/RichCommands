@@ -69,6 +69,8 @@ Expected result:
 }
 ```
 
+[[More examples](https://github.com/4erem6a/RichCommands/tree/master/examples)]
+
 ## Grammar
 
 ```
