@@ -1,10 +1,17 @@
+<img src="https://badge.langauge.io/4erem6a/RichCommands" align="right" />
+
 # RichCommands
 
-RichCommands is a simple, feature-rich and error-free command/argument parser.
+[![npm version](https://badge.fury.io/js/rich-commands.svg)][npm]
+![downloads](https://img.shields.io/npm/dw/rich-commands)
+[![stars](https://img.shields.io/github/stars/4erem6a/RichCommands)][github]
+![licence](https://img.shields.io/github/license/4erem6a/RichCommands)
 
-[![npm version](https://badge.fury.io/js/rich-commands.svg)](https://www.npmjs.com/package/rich-commands)
+RichCommands is a simple, feature-rich and error-free command/argument parser. [[Documentation][docs]]
 
-[Documentation](https://4erem6a.github.io/RichCommands/)
+[npm]: https://www.npmjs.com/package/rich-commands
+[github]: https://github.com/4erem6a/RichCommands
+[docs]: https://4erem6a.github.io/RichCommands
 
 ## Features
 
