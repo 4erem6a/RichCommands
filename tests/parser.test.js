@@ -1,4 +1,9 @@
-const { parseCommand, parseArgs } = require("../");
+const {
+  parseCommand,
+  parseArgs,
+  Parser,
+  defaultParserOptions
+} = require("../");
 
 describe("Parser tests", () => {
   test("Parse Simple", () => {
@@ -36,14 +41,14 @@ describe("Parser tests", () => {
   });
 
   test("Long Escape", () => {
-    const source = `1 beginbegin1 2 :long-escape::long-escape:3:long-escape:end 4end`;
+    const source = `1 beginbegin1 2 :long-escape: :long-escape::long-escape:3:long-escape:end 4end`;
 
     const { args: result } = parseArgs(source, {
       escapeMarkers: [":long-escape:"],
       quotes: [["begin", "end"]]
     });
 
-    expect(result).toEqual(["1", "begin1 2 :long-escape:3end 4"]);
+    expect(result).toEqual(["1", "begin1 2 :long-escape: :long-escape:3end 4"]);
   });
 
   test("Parse Empty", () => {
@@ -141,6 +146,30 @@ describe("Parser tests", () => {
     const source = ``;
 
     const result = parseCommand(source);
+
+    expect(result).toBe(null);
+  });
+
+  test("Parser Reset", () => {
+    const source = "npm i -D typescript";
+
+    const parser = new Parser(source, defaultParserOptions);
+
+    const result1 = parser.command();
+
+    parser.reset();
+
+    const result2 = parser.command();
+
+    expect(result1).toEqual(result2);
+  });
+
+  test("Parse Invalid Flag", () => {
+    const source = "--";
+
+    const parser = new Parser(source, defaultParserOptions);
+
+    const result = parser.flag();
 
     expect(result).toBe(null);
   });
