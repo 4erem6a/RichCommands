@@ -54,6 +54,8 @@ describe("Flag Object Tests", () => {
     expect(flagObject.ALPHA).toEqual(flagObject.alpha);
 
     expect("ALPHA" in flagObject).toBeTruthy();
+
+    expect("other" in flagObject).toBeFalsy();
   });
 
   test("Array Case Insensitive Flags", () => {
@@ -71,5 +73,18 @@ describe("Flag Object Tests", () => {
     expect(flagObject.GAMMA).toEqual(flagObject.gamma);
 
     expect("GAMMA" in flagObject).toBeTruthy();
+
+    expect("other" in flagObject).toBeFalsy();
+  });
+
+  test("Without Options", () => {
+    const flagObject = createFlagObject(flags);
+
+    expect(flagObject).toEqual({
+      alpha: ["1", undefined],
+      beta: undefined,
+      gamma: "2",
+      BETA: "3"
+    });
   });
 });

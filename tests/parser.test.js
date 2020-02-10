@@ -173,4 +173,17 @@ describe("Parser tests", () => {
 
     expect(result).toBe(null);
   });
+
+  test("Parse Without Options", () => {
+    const source = "npm i -D typescript ~";
+
+    const parser = new Parser(source, {});
+
+    const result = parser.command();
+
+    expect(result).toEqual({
+      name: source,
+      parts: []
+    });
+  });
 });
