@@ -1,6 +1,6 @@
 {
   "name": "rich-commands",
-  "version": "2.3.1",
+  "version": "2.3.2",
   "description": "A command parser",
   "main": "dist/index.js",
   "types": "./types",
