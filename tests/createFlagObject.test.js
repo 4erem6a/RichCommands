@@ -52,6 +52,8 @@ describe("Flag Object Tests", () => {
     });
 
     expect(flagObject.ALPHA).toEqual(flagObject.alpha);
+
+    expect("ALPHA" in flagObject).toBeTruthy();
   });
 
   test("Array Case Insensitive Flags", () => {
@@ -67,5 +69,7 @@ describe("Flag Object Tests", () => {
     });
 
     expect(flagObject.GAMMA).toEqual(flagObject.gamma);
+
+    expect("GAMMA" in flagObject).toBeTruthy();
   });
 });
