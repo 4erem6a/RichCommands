@@ -10,11 +10,16 @@
     "buildDebug": "yarn clear && ./node_modules/.bin/tsc --inlineSourceMap",
     "docs": "./node_modules/.bin/typedoc --mode file --out docs src",
     "lint": "./node_modules/.bin/eslint src/**",
-    "test": "./node_modules/.bin/jest",
+    "test": "./node_modules/.bin/jest | ./node_modules/.bin/coveralls",
     "prepublishOnly": "yarn lint && yarn buildRelease && yarn test"
   },
   "jest": {
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "coverageDirectory": "./coverage",
+    "collectCoverage": true,
+    "coverageReporters": [
+      "text-lcov"
+    ]
   },
   "keywords": [
     "rich",
@@ -32,6 +37,7 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^2.16.0",
     "@typescript-eslint/parser": "^2.16.0",
+    "coveralls": "^3.0.9",
     "eslint": "^6.8.0",
     "jest": "^24.9.0",
     "typedoc": "^0.15.5",
