@@ -35,20 +35,12 @@ function compareStrings(
  */
 function makeCaseInsensitive(flagObject: CommandFlags): CommandFlags {
   return new Proxy(flagObject, {
-    get(target, key, receiver): CommandFlagValue | CommandFlagValue[] {
-      if (typeof key == "symbol") {
-        return Reflect.get(target, key, receiver);
-      }
-
+    get(target, key): CommandFlagValue | CommandFlagValue[] {
       return Object.entries(target).find(([k]) =>
         compareStrings(k, key.toString(), false)
       )?.[1];
     },
     has(target, key): boolean {
-      if (typeof key == "symbol") {
-        return Reflect.has(target, key);
-      }
-
       const matchingKey = Object.keys(target).find(k =>
         compareStrings(k, key.toString(), false)
       );
