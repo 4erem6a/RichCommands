@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@4erem6a/inputstream@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@4erem6a/inputstream/-/inputstream-0.1.1.tgz#8147507ab65ad60fdd0119059a755d4f537af6ba"
-  integrity sha512-N3zwzBuiQC2yfaC1lvdgiuOYyk1HcwgqrNSDdqZKmBrtYF3aXlQv1ZR8CcUhYNj4wyNqBtVE712ktLqc9BqKhA==
+"@4erem6a/inputstream@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@4erem6a/inputstream/-/inputstream-1.0.0.tgz#1161f63a6285f266228ee803cb9fbb4a73487e05"
+  integrity sha512-w5wxe9kNJFUNOhDCFr2YkOFqVDY3OE1C3UajeEmjQZOa9IV2546z5GhNVQ2+NmmeOah732ATE5me14kQMuzT1Q==
 
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.5.5":
   version "7.5.5"

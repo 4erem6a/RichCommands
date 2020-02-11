@@ -41,6 +41,6 @@
     "typescript": "^3.7.4"
   },
   "dependencies": {
-    "@4erem6a/inputstream": "^0.1.1"
+    "@4erem6a/inputstream": "^1.0.0"
   }
 }
