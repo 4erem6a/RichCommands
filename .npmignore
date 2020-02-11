@@ -7,3 +7,4 @@ examples/
 .tsconfig
 .eslintrc.yml
 .eslintignore
+.coveralls.yml
