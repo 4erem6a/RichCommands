@@ -4,6 +4,7 @@
 
 [![npm version](https://badge.fury.io/js/rich-commands.svg)][npm]
 ![downloads](https://img.shields.io/npm/dw/rich-commands)
+![build](https://travis-ci.org/4erem6a/RichCommands.svg?branch=master)
 ![coverage](https://img.shields.io/coveralls/github/4erem6a/RichCommands)
 ![licence](https://img.shields.io/github/license/4erem6a/RichCommands)
 
