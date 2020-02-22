@@ -5,9 +5,9 @@
   "main": "dist/index.js",
   "types": "./types",
   "scripts": {
-    "clear": "./node_modules/.bin/rimraf dist && ./node_modules/.bin/rimraf types",
-    "buildRelease": "yarn clear && ./node_modules/.bin/tsc",
-    "buildDebug": "yarn clear && ./node_modules/.bin/tsc --inlineSourceMap",
+    "clean": "./node_modules/.bin/rimraf dist && ./node_modules/.bin/rimraf types",
+    "buildRelease": "yarn clean && ./node_modules/.bin/tsc",
+    "buildDebug": "yarn clean && ./node_modules/.bin/tsc --inlineSourceMap",
     "docs": "./node_modules/.bin/typedoc --mode file --out docs src",
     "lint": "./node_modules/.bin/eslint src/**",
     "test": "./node_modules/.bin/jest --coverageReporters=text-lcov | ./node_modules/.bin/coveralls",
