@@ -31,8 +31,7 @@ export class Parser {
   /**
    * The parsing mode stack.
    */
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  private modeStack: any[] = [];
+  private modeStack: unknown[] = [];
 
   /**
    * @param source The source string.
@@ -47,16 +46,14 @@ export class Parser {
   public constructor(source: InputStream, options: ParserOptions);
 
   public constructor(source: string | InputStream, options: ParserOptions) {
-    this.source =
-      source instanceof InputStream ? source : new InputStream(source);
+    this.source = source instanceof InputStream ? source : new InputStream(source);
     this.options = options;
   }
 
   /**
    * The current parsing mode.
    */
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  private get mode(): any {
+  private get mode(): unknown {
     return this.modeStack[this.modeStack.length - 1];
   }
 
@@ -102,10 +99,7 @@ export class Parser {
   public commandParts(count?: number): CommandPart[] {
     const parts: CommandPart[] = [];
 
-    while (
-      this.source.isValid &&
-      (count == undefined || parts.length < count)
-    ) {
+    while (this.source.isValid && (count == undefined || parts.length < count)) {
       const part = this.commandPart();
 
       if (part !== null) {
