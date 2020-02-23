@@ -11,7 +11,7 @@
     "docs": "./node_modules/.bin/typedoc --mode file --out docs src",
     "lint": "./node_modules/.bin/eslint src/**",
     "test": "./node_modules/.bin/jest",
-    "coverage": "/node_modules/.bin/jest --coverage --coverageReporters=text-lcov | ./node_modules/.bin/coveralls",
+    "coverage": "./node_modules/.bin/jest --coverage --coverageReporters=text-lcov | ./node_modules/.bin/coveralls",
     "prepublishOnly": "yarn lint && yarn buildRelease && yarn test",
     "postpublish": "yarn clean"
   },
