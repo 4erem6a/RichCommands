@@ -1,5 +1,3 @@
-<img src="https://badge.langauge.io/4erem6a/RichCommands" align="right" />
-
 # RichCommands
 
 [![npm version](https://badge.fury.io/js/rich-commands.svg)][npm]
