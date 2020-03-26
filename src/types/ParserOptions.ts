@@ -4,7 +4,7 @@
 export type Lexeme = string | RegExp;
 
 /**
- * Options describing the command syntax for the {@link RichParser}.
+ * Options describing the command syntax for the {@link Parser}.
  */
 export interface ParserOptions {
   /**
