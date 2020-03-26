@@ -208,7 +208,8 @@ export class Parser {
       const escape = this.source.findPresentingLexeme(escapes);
 
       if (escape) {
-        const escapeLength = this.source.measureLexeme(escape);
+        const escapeLength =
+          typeof escape == "string" ? escape.length : this.source.measureLexeme(escape);
 
         if (this.source.matchLexeme(closing, escapeLength)) {
           buffer += closing;
