@@ -1,5 +1,5 @@
-import { InputStream } from "@4erem6a/inputstream";
-import { ParserOptions } from "./types/ParserOptions";
+import { InputStream } from "./InputStream";
+import { ParserOptions, Lexeme } from "./types/ParserOptions";
 import {
   CommandPart,
   CommandFlag,
@@ -125,7 +125,7 @@ export class Parser {
   public flag(): CommandFlag | null {
     const flagMarkers = this.options.flagMarkers ?? [];
 
-    if (!this.source.match(flagMarkers)) {
+    if (!this.source.matchLexeme(flagMarkers)) {
       return null;
     }
 
@@ -145,7 +145,7 @@ export class Parser {
 
     const valueMarkers = this.options.flagValueMarkers ?? [];
 
-    const value = this.source.match(valueMarkers)
+    const value = this.source.matchLexeme(valueMarkers)
       ? (this.skipSeparators(), this.argument())
       : true;
 
@@ -167,7 +167,7 @@ export class Parser {
   public rest(): StringArgument | null {
     const restMarkers = this.options.restMarkers ?? [];
 
-    if (this.source.match(restMarkers)) {
+    if (this.source.matchLexeme(restMarkers)) {
       return this.matchRest();
     }
 
@@ -190,7 +190,7 @@ export class Parser {
     if (!opening) {
       return null;
     } else {
-      this.source.match(opening);
+      this.source.matchLexeme(opening);
     }
 
     const closing = this.getClosingQuote(opening);
@@ -205,13 +205,15 @@ export class Parser {
         return buffer;
       }
 
-      const escape = this.source.findPresenting(escapes);
+      const escape = this.source.findPresentingLexeme(escapes);
 
       if (escape) {
-        if (this.source.match(closing, escape.length)) {
+        const escapeLength = this.source.measureLexeme(escape);
+
+        if (this.source.matchLexeme(closing, escapeLength)) {
           buffer += closing;
           this.source.move(-1);
-        } else if (this.source.match(escape, escape.length)) {
+        } else if (this.source.matchLexeme(escape, escapeLength)) {
           buffer += escape;
           this.source.move(-1);
         } else {
@@ -252,10 +254,10 @@ export class Parser {
 
     while (
       this.source.isValid &&
-      !this.source.match(separators) &&
+      !this.source.matchLexeme(separators) &&
       !this.findPresentingOpeningQuote()
     ) {
-      if (this.mode == FLAG_MODE && this.source.lookFor(valueMarkers)) {
+      if (this.mode == FLAG_MODE && this.source.lookForLexeme(valueMarkers)) {
         break;
       }
 
@@ -272,7 +274,7 @@ export class Parser {
    * Returns the corresponding closing quote for the opening one.
    * @param opening The opening quote.
    */
-  private getClosingQuote(opening: string): string {
+  private getClosingQuote(opening: Lexeme): string {
     const quotes = this.options.quotes ?? [];
 
     const closingQuote = quotes.find(q => {
@@ -287,12 +289,12 @@ export class Parser {
   /**
    * Returns the opening quote presented at the current source position, if any.
    */
-  private findPresentingOpeningQuote(): string | undefined {
+  private findPresentingOpeningQuote(): Lexeme | undefined {
     const quotes = this.options.quotes ?? [];
 
     const openingQuotes = quotes.map(q => (Array.isArray(q) ? q[0] : q));
 
-    return this.source.findPresenting(openingQuotes);
+    return this.source.findPresentingLexeme(openingQuotes);
   }
 
   /**
@@ -301,6 +303,6 @@ export class Parser {
   public skipSeparators(): void {
     const separators = this.options.separators ?? [];
 
-    while (this.source.match(separators));
+    while (this.source.matchLexeme(separators));
   }
 }
