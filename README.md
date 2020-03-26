@@ -18,6 +18,7 @@ RichCommands is a simple, feature-rich and error-free command/argument parser. [
 
 - Simple API
 - Fully configurable syntax
+- Regex support
 - Quoted arguments
 - Rest arguments
 - Escape markers
@@ -103,3 +104,19 @@ empty       -> <EmptyArgMarker>
   restMarkers: ["::"]
 }
 ```
+
+> Since v2.4.0 you can use regular expressions in the parser options.
+
+```js
+{
+  quotes: ['"', ["(", ")"]],
+  flagMarkers: [/--?/],
+  flagValueMarkers: ["="],
+  emptyArgMarkers: ["~"],
+  escapeMarkers: ["\\"],
+  separators: [/\s+/],
+  restMarkers: ["::"]
+}
+```
+
+> `^` and `$` regex anchors might not work as you expect due to parsing implementation, you should avoid using them.
