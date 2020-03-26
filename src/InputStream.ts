@@ -75,4 +75,19 @@ export class InputStream extends _InputStream {
   public findPresentingLexeme(lexemes: Lexeme[], offset?: number): Lexeme | undefined {
     return lexemes.find(lexeme => this.lookForLexeme(lexeme, offset));
   }
+
+  /**
+   * Returns the length of a lexeme or 0 if it's not present.
+   * @param lexeme A lexeme to measure.
+   * @param offset Matching position offset.
+   */
+  public measureLexeme(lexeme: Lexeme, offset?: number): number {
+    if (typeof lexeme == "string") {
+      return this.lookFor(lexeme) ? lexeme.length : 0;
+    }
+
+    const match = this.matchRegExp(lexeme, offset);
+
+    return match?.[0]?.length ?? 0;
+  }
 }
