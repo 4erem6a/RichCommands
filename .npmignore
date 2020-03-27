@@ -5,7 +5,7 @@ tests/
 scripts/
 examples/
 .gitignore
-.tsconfig
+.tsconfig.json
 .eslintrc.yml
 .eslintignore
 .coveralls.yml
