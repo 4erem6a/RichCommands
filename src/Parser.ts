@@ -200,7 +200,7 @@ export class Parser {
 
     const escapes = this.options.escapeMarkers ?? [];
 
-    while (!this.source.match(closing)) {
+    while (!this.source.matchLexeme(closing)) {
       if (!this.source.isValid) {
         return buffer;
       }
@@ -275,14 +275,14 @@ export class Parser {
    * Returns the corresponding closing quote for the opening one.
    * @param opening The opening quote.
    */
-  private getClosingQuote(opening: Lexeme): string {
+  private getClosingQuote(opening: Lexeme): Lexeme {
     const quotes = this.options.quotes ?? [];
 
     const closingQuote = quotes.find(q => {
       q = Array.isArray(q) ? q[0] : q;
 
       return q == opening;
-    }) as string;
+    }) as Lexeme;
 
     return Array.isArray(closingQuote) ? closingQuote[1] : closingQuote;
   }
