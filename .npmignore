@@ -1,3 +1,4 @@
+.vscode/
 src/
 docs/
 tests/
@@ -8,3 +9,4 @@ examples/
 .eslintrc.yml
 .eslintignore
 .coveralls.yml
+.travis.yml
