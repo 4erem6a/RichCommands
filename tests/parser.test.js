@@ -79,12 +79,20 @@ describe("Parser tests", () => {
   });
 
   test("Parse Complex", () => {
-    const source = `--test -x = 3 sample -f = 1 ~ (complex command) -f = 2 --with = (complex flags) --f ~ and -empty-one=~ :: rest -rest`;
+    const source = `--test -x = 3 sample (q u o t e d) -f = 1 ~ (complex command) -f = 2 --with = (complex flags) --f ~ and -empty-one=~ :: rest -rest`;
 
     const result = parseArgs(source);
 
     expect(result).toEqual({
-      args: ["sample", undefined, "complex command", undefined, "and", " rest -rest"],
+      args: [
+        "sample",
+        "q u o t e d",
+        undefined,
+        "complex command",
+        undefined,
+        "and",
+        " rest -rest"
+      ],
       flags: {
         test: true,
         x: "3",
@@ -182,7 +190,7 @@ describe("Parser tests", () => {
     });
   });
 
-  test("Parser Complex (Regexp Lexemes)", () => {
+  test("Parse Complex (Regexp Lexemes)", () => {
     const options = {
       quotes: [/"/, [/\(/, /\)/]],
       flagMarkers: [/--/, /-/],
@@ -193,12 +201,20 @@ describe("Parser tests", () => {
       restMarkers: [/::/]
     };
 
-    const source = `--test -x = 3 sample -f = 1 ~ (complex command) -f = 2 --with = (complex flags) --f ~ and -empty-one=~ :: rest -rest`;
+    const source = `--test -x = 3 sample (q u o t e d) -f = 1 ~ (complex command) -f = 2 --with = (complex flags) --f ~ and -empty-one=~ :: rest -rest`;
 
     const result = parseArgs(source);
 
     expect(result).toEqual({
-      args: ["sample", undefined, "complex command", undefined, "and", " rest -rest"],
+      args: [
+        "sample",
+        "q u o t e d",
+        undefined,
+        "complex command",
+        undefined,
+        "and",
+        " rest -rest"
+      ],
       flags: {
         test: true,
         x: "3",
@@ -209,7 +225,7 @@ describe("Parser tests", () => {
     });
   });
 
-  test("Parser Complex (Modified Regexp Lexemes)", () => {
+  test("Parse Complex (Modified Regexp Lexemes)", () => {
     const options = {
       quotes: [/"/, [/\(/, /\)/]],
       flagMarkers: [/--?/],
@@ -220,12 +236,20 @@ describe("Parser tests", () => {
       restMarkers: [/::/]
     };
 
-    const source = `--test -x = 3 sample -f = 1 ~ (complex command) -f = 2 --with = (complex flags) --f ~ and -empty-one=~ :: rest -rest`;
+    const source = `--test -x = 3 sample (q u o t e d) -f = 1 ~ (complex command) -f = 2 --with = (complex flags) --f ~ and -empty-one=~ :: rest -rest`;
 
     const result = parseArgs(source);
 
     expect(result).toEqual({
-      args: ["sample", undefined, "complex command", undefined, "and", " rest -rest"],
+      args: [
+        "sample",
+        "q u o t e d",
+        undefined,
+        "complex command",
+        undefined,
+        "and",
+        " rest -rest"
+      ],
       flags: {
         test: true,
         x: "3",
